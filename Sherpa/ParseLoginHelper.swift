@@ -17,7 +17,7 @@ typealias ParseLoginHelperCallback = (PFUser?, NSError?) -> Void
 This class implements the 'PFLogInViewControllerDelegate' protocol. After a successfull login
 it will call the callback function and provide a 'PFUser' object.
 */
-class ParseLoginHelper : NSObject, NSObjectProtocol {
+class ParseLoginHelper : NSObject {
     static let errorDomain = "com.makeschool.parseloginhelpererrordomain"
     static let usernameNotFoundErrorCode = 1
     static let usernameNotFoundLocalizedDescription = "Could not retrieve Facebook username"
@@ -90,7 +90,7 @@ extension ParseLoginHelper : PFLogInViewControllerDelegate {
     
     //This will override the dialog box coming on the screen when a not legit login is done
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
-        println("Did fail to login")
+        print("Did fail to login")
     }
     
 }
@@ -102,11 +102,11 @@ extension ParseLoginHelper : PFSignUpViewControllerDelegate {
     }
     
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
-        println("User failed to sign up. Bad, weak Sparta.")
+        print("User failed to sign up. Bad, weak Sparta.")
     }
     
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
-        println("Did dismiss Sign Up. User says Spartaaaaa.")
+        print("Did dismiss Sign Up. User says Spartaaaaa.")
     }
     
 }

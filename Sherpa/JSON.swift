@@ -105,7 +105,7 @@ enum JSONValue {
             return JSONValue.JSONNull
         case let value as NSDictionary:
             var jsonObject: [String:JSONValue] = [:]
-            for (k: AnyObject, v: AnyObject) in value {
+            for (k, v): (AnyObject, AnyObject) in value {
                 if let k = k as? NSString {
                     if let v = JSONValue.fromObject(v) {
                         jsonObject[k as String] = v

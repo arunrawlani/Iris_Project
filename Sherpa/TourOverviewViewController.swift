@@ -32,7 +32,7 @@ class TourOverviewViewController: UIViewController, SINCallClientDelegate, AKPic
     var thisIsFucked: Int = 1
     
     @IBAction func reserveButtonPressed(sender: AnyObject) {
-        println(thisIsFucked)
+        print(thisIsFucked)
         if thisIsFucked == 1 {
             reserveButton.setImage(UIImage(named: "PaymentMethod"), forState: .Normal)
         }
@@ -62,7 +62,7 @@ class TourOverviewViewController: UIViewController, SINCallClientDelegate, AKPic
     var but7ON: Bool = false
     
     @IBAction func ButtonSelected(sender: AnyObject) {
-        println(sender.tag)
+        print(sender.tag)
         switch(sender.tag) {
         case 1:
             if but1ON == false {
@@ -143,20 +143,20 @@ class TourOverviewViewController: UIViewController, SINCallClientDelegate, AKPic
     @IBAction func call(sender: AnyObject) {
         
         if client().isStarted() {
-            var call: SINCall = client().callClient().callUserWithId("test@email.com")
+            let call: SINCall = client().callClient().callUserWithId("test@email.com")
             performSegueWithIdentifier("goToCall", sender: call)
         }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "goToCall" {
-            var callViewController: CallViewController = segue.destinationViewController as! CallViewController;
-            var call = sender as! SINCall
+            let callViewController: CallViewController = segue.destinationViewController as! CallViewController;
+            let call = sender as! SINCall
             callViewController.call = call
             call.delegate = callViewController
         }
         else if segue.identifier == "goToTimeline" {
-            var tvc: TimelineViewController = segue.destinationViewController as! TimelineViewController
+            let tvc: TimelineViewController = segue.destinationViewController as! TimelineViewController
             tvc.whichTimeline = ImageName
         }
     }
@@ -220,12 +220,12 @@ class TourOverviewViewController: UIViewController, SINCallClientDelegate, AKPic
     }
     
     func client() -> SINClient {
-        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.client!
     }
     
     func client(client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
-        println("called client(didReceiveIncomingCall)")
+        print("called client(didReceiveIncomingCall)")
         performSegueWithIdentifier("goToCall", sender: call)
     }
     

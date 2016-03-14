@@ -52,7 +52,7 @@ class RequestViewController: UIViewController{
         self.awaitingQuery!.includeKey("toTour")
         }
     else{
-        println("Optional related error?")
+        print("Optional related error?")
     }
     
     awaitingQuery!.findObjectsInBackgroundWithBlock {(result: [AnyObject]?, error: NSError?) -> Void in
@@ -73,7 +73,7 @@ class RequestViewController: UIViewController{
         self.approvedQuery!.includeKey("toTour")
     }
     else{
-        println("Optional related error?")
+        print("Optional related error?")
     }
     
     approvedQuery!.findObjectsInBackgroundWithBlock {(result: [AnyObject]?, error: NSError?) -> Void in
@@ -82,7 +82,7 @@ class RequestViewController: UIViewController{
         self.tableView.reloadData()
         
     
-    println(self.approvedTour.count)
+    print(self.approvedTour.count)
     }
     
     }
@@ -115,11 +115,11 @@ extension RequestViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count = 0
         if (requestSegment.selectedSegmentIndex == 0){
-            println(self.requestedTour.count)
+            print(self.requestedTour.count)
             count = self.requestedTour.count ?? 0
         }
         else{
-            println(self.approvedTour.count)
+            print(self.approvedTour.count)
             count = self.approvedTour.count ?? 0
         }
         return count
@@ -128,7 +128,7 @@ extension RequestViewController: UITableViewDataSource{
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         if (requestSegment.selectedSegmentIndex == 0){
             if (requestedTour.count == 0) {
-            var messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
+            let messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
             messageLabel.text = "No pending tours"
             messageLabel.textColor = UIColor.whiteColor()
             messageLabel.font = UIFont(name: "Avenir Next", size: 24)
@@ -147,7 +147,7 @@ extension RequestViewController: UITableViewDataSource{
         }
         else{
             if (approvedTour.count == 0) {
-                var messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
+                let messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
                 messageLabel.text = "No purchased items"
                 messageLabel.textColor = UIColor.whiteColor()
                 messageLabel.font = UIFont(name: "Avenir Next", size: 24)
@@ -180,7 +180,7 @@ extension RequestViewController: UITableViewDataSource{
                 cell.productImage.image = UIImage(named:"newUser")
         }
         else {
-                var userImageFile: AnyObject? = requestedTour[indexPath.row].productImage
+                let userImageFile: AnyObject? = requestedTour[indexPath.row].productImage
                 let data = userImageFile?.getData()
                 cell.productImage.image = UIImage(data: data!, scale: 1.0)
         }

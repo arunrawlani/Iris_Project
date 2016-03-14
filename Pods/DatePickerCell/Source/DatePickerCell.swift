@@ -76,10 +76,10 @@ public class DatePickerCell: UITableViewCell {
     /**
     Creates the DatePickerCell
     
-    :param: style           A constant indicating a cell style. See UITableViewCellStyle for descriptions of these constants.
-    :param: reuseIdentifier A string used to identify the cell object if it is to be reused for drawing multiple rows of a table view. Pass nil if the cell object is not to be reused. You should use the same reuse identifier for all cells of the same form.
+    - parameter style:           A constant indicating a cell style. See UITableViewCellStyle for descriptions of these constants.
+    - parameter reuseIdentifier: A string used to identify the cell object if it is to be reused for drawing multiple rows of a table view. Pass nil if the cell object is not to be reused. You should use the same reuse identifier for all cells of the same form.
     
-    :returns: An initialized DatePickerCell object or nil if the object could not be created.
+    - returns: An initialized DatePickerCell object or nil if the object could not be created.
     */
     override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -91,10 +91,10 @@ public class DatePickerCell: UITableViewCell {
         // The datePicker overhangs the view slightly to avoid invalid constraints.
         self.clipsToBounds = true
         
-        var views = [leftLabel, rightLabel, seperator, datePickerContainer, datePicker]
+        let views = [leftLabel, rightLabel, seperator, datePickerContainer, datePicker]
         for view in views {
             self.contentView .addSubview(view)
-            view.setTranslatesAutoresizingMaskIntoConstraints(false)
+            view.translatesAutoresizingMaskIntoConstraints = false
         }
         
         datePickerContainer.clipsToBounds = true
@@ -105,7 +105,7 @@ public class DatePickerCell: UITableViewCell {
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components( .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay,  fromDate: date)
+        let components = calendar.components( [.Year, .Month, .Day],  fromDate: date)
         let year = components.year
         let month = components.month
         let day = components.day
@@ -316,10 +316,10 @@ public class DatePickerCell: UITableViewCell {
     /**
     Needed for initialization from a storyboard.
     
-    :param: aDecoder An unarchiver object.
-    :returns: An initialized DatePickerCell object or nil if the object could not be created.
+    - parameter aDecoder: An unarchiver object.
+    - returns: An initialized DatePickerCell object or nil if the object could not be created.
     */
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -327,17 +327,17 @@ public class DatePickerCell: UITableViewCell {
     /**
     Determines the current desired height of the cell. Used in the UITableViewDelegate's heightForRowAtIndexPath method.
     
-    :returns: The cell's height.
+    - returns: The cell's height.
     */
     public func datePickerHeight() -> CGFloat {
-        var expandedHeight = unexpandedHeight + CGFloat(datePicker.frame.size.height)
+        let expandedHeight = unexpandedHeight + CGFloat(datePicker.frame.size.height)
         return expanded ? expandedHeight : unexpandedHeight
     }
     
     /**
     Used to notify the DatePickerCell that it was selected. The DatePickerCell will then run its selection animation and expand or collapse.
     
-    :param: tableView The tableview the DatePickerCell was selected in.
+    - parameter tableView: The tableview the DatePickerCell was selected in.
     */
     
     public func selectedInTableView(tableView: UITableView) {

@@ -31,7 +31,7 @@ class ToursViewController: UIViewController, UITableViewDelegate , UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        println(mainCityLabelText)
+        print(mainCityLabelText)
         MainCityLabel.text = mainCityLabelText
        MainCityImageview.image = UIImage(named: mainGraphicImageFileName)
         tableview.allowsSelection = false
@@ -49,7 +49,7 @@ class ToursViewController: UIViewController, UITableViewDelegate , UITableViewDa
             
             //Parse hands us an [AnyObject] array which we cast to [Tour]. If casting not possible, store empty array
             self.toursNY = result as? [Tour] ?? []
-            println(result?.description)
+            print(result?.description)
             //println(result.first!.)
             self.tableview.reloadData()
             

@@ -1,5 +1,5 @@
 PODS:
-  - AKPickerView-Swift (0.2.1)
+  - AKPickerView-Swift (1.0.1)
   - Bolts (1.2.0):
     - Bolts/AppLinks (= 1.2.0)
     - Bolts/Tasks (= 1.2.0)
@@ -43,7 +43,7 @@ DEPENDENCIES:
   - SinchRTC
 
 SPEC CHECKSUMS:
-  AKPickerView-Swift: 7989ebd544dc2adcbb56ffd48bbb8d3c3ea2d71d
+  AKPickerView-Swift: 8509d472bb257649383c276506334a7373d3cb33
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   Bond: c873dba04a09dde9e422242420979aa8e4c9e133
   DatePickerCell: b2abd1f6ba08f01da11baee73a503d6dc33f3118

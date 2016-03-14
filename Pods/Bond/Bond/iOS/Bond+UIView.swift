@@ -42,7 +42,7 @@ extension UIView {
       let bond = Bond<UIColor>() { [weak self] v in if let s = self { s.backgroundColor = v } }
       d.bindTo(bond, fire: false, strongly: false)
       d.retain(bond)
-      objc_setAssociatedObject(self, &backgroundColorDynamicHandleUIView, d, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
+      objc_setAssociatedObject(self, &backgroundColorDynamicHandleUIView, d, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
       return d
     }
   }
@@ -55,7 +55,7 @@ extension UIView {
       let bond = Bond<CGFloat>() { [weak self] v in if let s = self { s.alpha = v } }
       d.bindTo(bond, fire: false, strongly: false)
       d.retain(bond)
-      objc_setAssociatedObject(self, &alphaDynamicHandleUIView, d, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
+      objc_setAssociatedObject(self, &alphaDynamicHandleUIView, d, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
       return d
     }
   }
@@ -68,7 +68,7 @@ extension UIView {
       let bond = Bond<Bool>() { [weak self] v in if let s = self { s.hidden = v } }
       d.bindTo(bond, fire: false, strongly: false)
       d.retain(bond)
-      objc_setAssociatedObject(self, &hiddenDynamicHandleUIView, d, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
+      objc_setAssociatedObject(self, &hiddenDynamicHandleUIView, d, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
       return d
     }
   }
@@ -81,7 +81,7 @@ extension UIView {
       let bond = Bond<Bool>() { [weak self] v in if let s = self { s.userInteractionEnabled = v } }
       d.bindTo(bond, fire: false, strongly: false)
       d.retain(bond)
-      objc_setAssociatedObject(self, &hiddenDynamicHandleUIView, d, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
+      objc_setAssociatedObject(self, &hiddenDynamicHandleUIView, d, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
       return d
     }
   }

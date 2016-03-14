@@ -23,7 +23,7 @@ class ExploreTableCell: UITableViewCell {
     var delegate: explore? = nil
 
     @IBAction func onImageClicked(sender: AnyObject) {
-        println("pressed image")
+        print("pressed image")
         if (delegate != nil) {
             delegate!.pressedImage(cityNameLabel.text!, imageFilename: imageFilename, selectedCity: cityId)
         }

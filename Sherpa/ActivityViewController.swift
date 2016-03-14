@@ -37,7 +37,7 @@ extension ActivityViewController: UITableViewDataSource, UITableViewDelegate{
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         if (allActivity.count == 0) {
-            var messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
+            let messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
             messageLabel.text = "No activity yet"
             messageLabel.textColor = UIColor.whiteColor()
             messageLabel.font = UIFont(name: "Avenir Next", size: 27)
@@ -62,7 +62,7 @@ extension ActivityViewController: UITableViewDataSource, UITableViewDelegate{
             cell.userImage.image = UIImage(named:"DisplayPicture")
         }
         else {
-            var userImageFile: AnyObject? = allActivity[indexPath.row].userImage
+            let userImageFile: AnyObject? = allActivity[indexPath.row].userImage
             let data = userImageFile?.getData()
             cell.userImage.image = UIImage(data: data!, scale: 1.0)
         }

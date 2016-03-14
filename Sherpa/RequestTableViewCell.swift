@@ -38,13 +38,13 @@ class RequestTableViewCell: UITableViewCell {
             (success: Bool, error: NSError?) -> Void in
             if(success){
                 //success
-                println("Succesfully saved.")
+                print("Succesfully saved.")
                 self.approveMessage.hidden = false
                 self.processingMessage.hidden = true
             }
             else{
                 //fail
-                println("Failed to update isApproved.")
+                print("Failed to update isApproved.")
             }
         }
     }

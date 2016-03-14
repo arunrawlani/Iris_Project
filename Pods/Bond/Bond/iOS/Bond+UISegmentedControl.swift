@@ -27,7 +27,7 @@
 
 import UIKit
 
-@objc class SegmentedControlDynamicHelper
+class SegmentedControlDynamicHelper
 {
   weak var control: UISegmentedControl?
   var listener: (UIControlEvents -> Void)?
@@ -68,7 +68,7 @@ extension UISegmentedControl /*: Dynamical, Bondable */ {
       return (d as? Dynamic<UIControlEvents>)!
     } else {
       let d = SegmentedControlDynamic<UIControlEvents>(control: self)
-      objc_setAssociatedObject(self, &eventDynamicHandleUISegmentedControl, d, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
+      objc_setAssociatedObject(self, &eventDynamicHandleUISegmentedControl, d, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
       return d
     }
   }

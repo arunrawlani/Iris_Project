@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate{
                 
                 //if login was successful, returns a user. Display the TabController
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabBarController = storyboard.instantiateViewControllerWithIdentifier("NavigationControllerView") as! UIViewController
+                let tabBarController = storyboard.instantiateViewControllerWithIdentifier("NavigationControllerView") 
                 
                 //As soon as login is successful, replace login screen witht tab bar
                 self.window?.rootViewController!.presentViewController(tabBarController, animated:true, completion:nil)
@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate{
         
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
@@ -158,7 +158,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate{
     
     func clientDidStart(client: SINClient) {
         NSLog("client did start")
-        println(client.userId)
+        print(client.userId)
     }
     
     func clientDidStop(client: SINClient) {
@@ -211,7 +211,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate{
     
     func showMainScreen(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UIViewController
+        let tabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") 
         
         //As soon as login is successful, replace login screen witht tab bar
         self.window?.rootViewController!.presentViewController(tabBarController, animated:true, completion:nil)

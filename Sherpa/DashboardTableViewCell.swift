@@ -49,6 +49,6 @@ class DashboardTableViewCell: UITableViewCell {
             println("Failed to update isCancelled.")
         }
     }*/
-    println("Show Details")
+    print("Show Details")
 }
 }

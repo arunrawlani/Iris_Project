@@ -95,7 +95,7 @@ class CallViewController: UIViewController, SINCallDelegate {
   }
   
   func getPathForSound(soundName: String) -> String {
-    return NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent(soundName)
+    return (NSBundle.mainBundle().resourcePath! as NSString).stringByAppendingPathComponent(soundName)
   }
   
   func setCallStatusText(text: String) {

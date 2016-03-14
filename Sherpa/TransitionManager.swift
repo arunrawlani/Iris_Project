@@ -23,8 +23,8 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         
         // set up from 2D transforms that we'll use in the animation
-        let offScreenRight = CGAffineTransformMakeTranslation(container.frame.width, 0)
-        let offScreenLeft = CGAffineTransformMakeTranslation(-container.frame.width, 0)
+        let offScreenRight = CGAffineTransformMakeTranslation(container!.frame.width, 0)
+        let offScreenLeft = CGAffineTransformMakeTranslation(-container!.frame.width, 0)
         
         // prepare the toView for the animation
         if (self.presenting){
@@ -36,8 +36,8 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         
         
         // add the both views to our view controller
-        container.addSubview(toView)
-        container.addSubview(fromView)
+        container!.addSubview(toView)
+        container!.addSubview(fromView)
         
         // get the duration of the animation
         // DON'T just type '0.5s' -- the reason why won't make sense until the next post
@@ -48,7 +48,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         // for this example, just slid both fromView and toView to the left at the same time
         // meaning fromView is pushed off the screen and toView slides into view
         // we also use the block animation usingSpringWithDamping for a little bounce
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: nil, animations: {
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [], animations: {
             
             // slide fromView off either the left or right edge of the screen
             // depending if we're presenting or dismissing this view
@@ -71,7 +71,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
     }
     
     // return how many seconds the transiton animation will take
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
     }
     

@@ -29,7 +29,7 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func photoMenu(sender: AnyObject) {
-        println("Take photo")
+        print("Take photo")
         takePhoto()
     }
     let transitionManager = TransitionManager()
@@ -71,19 +71,19 @@ class DashboardViewController: UIViewController {
             self.tableView.reloadData()
 
             }
-        var firstName: String = PFUser.currentUser()!["firstName"] as! String
-        var lastName: String = PFUser.currentUser()!["lastName"] as! String
-        var fullName: String = "\(firstName) \(lastName)"
-        var points = PFUser.currentUser()!["pointsEarned"] as! Int
+        let firstName: String = PFUser.currentUser()!["firstName"] as! String
+        let lastName: String = PFUser.currentUser()!["lastName"] as! String
+        let fullName: String = "\(firstName) \(lastName)"
+        let points = PFUser.currentUser()!["pointsEarned"] as! Int
         self.pointsEarned.text = "\(points)"
-        var trees = PFUser.currentUser()!["treesPlanted"] as! Int
+        let trees = PFUser.currentUser()!["treesPlanted"] as! Int
         self.treesPlanted.text = "\(trees)"
         self.nameLabel.text = fullName
         if (PFUser.currentUser()!["userImage"] == nil){
             self.userImage.image = UIImage(named:"DisplayPicture")
         }
         else {
-        var userImageFile: AnyObject? = PFUser.currentUser()!["userImage"]
+        let userImageFile: AnyObject? = PFUser.currentUser()!["userImage"]
         let data = userImageFile?.getData()
             self.userImage.image = UIImage(data: data!, scale: 1.0)
         }
@@ -127,16 +127,16 @@ class DashboardViewController: UIViewController {
             
         }
         else {
-            println("Request submitted has not been changed")
+            print("Request submitted has not been changed")
     }
     }
     
     func takePhoto() {
         // instantiate photo taking class, provide callback for when photo  is selected
         photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
-            println("received a callback")
-            let imageData = UIImageJPEGRepresentation(image, 0.8)
-            let imageFile = PFFile(data: imageData)
+            print("received a callback")
+            let imageData = UIImageJPEGRepresentation(image!, 0.8)
+            let imageFile = PFFile(data: imageData!)
             imageFile.saveInBackground()
             
         //allows image to be sstored in the background even if app is closed
@@ -160,7 +160,7 @@ class DashboardViewController: UIViewController {
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         // this gets a reference to the screen that we're about to transition to
-        let toViewController = segue.destinationViewController as! UIViewController
+        let toViewController = segue.destinationViewController 
         
         // instead of using the default transition animation, we'll ask
         // the segue to use our custom TransitionManager object to manage the transition animation
@@ -181,7 +181,7 @@ extension DashboardViewController: UITableViewDataSource{
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         if (scheduledTours.count == 0) {
-            var messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
+            let messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
             messageLabel.text = "No donations yet"
             messageLabel.textColor = UIColor.whiteColor()
             messageLabel.font = UIFont(name: "Avenir Next", size: 27)

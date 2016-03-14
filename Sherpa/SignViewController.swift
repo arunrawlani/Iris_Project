@@ -40,7 +40,7 @@ class SignViewController: UIViewController{
         
         
         //Customizing tint of the text fields
-        var color: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 100.0)
+        let color: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 100.0)
         self.firstNameTF.tintColor = color
         self.lastNameTF.tintColor = color
         self.usernameTF.tintColor = color
@@ -62,17 +62,17 @@ class SignViewController: UIViewController{
     //MARK: Actions
     @IBAction func signUpAction(sender: AnyObject) {
         
-        var firstName = self.firstNameTF.text
-        var lastName = self.lastNameTF.text
-        var username = self.usernameTF.text
-        var password = self.passwordTF.text
-        var email = self.emailTF.text
-        var pointsEarned = 0
-        var treesPlanted = 0
+        let firstName = self.firstNameTF.text
+        let lastName = self.lastNameTF.text
+        let username = self.usernameTF.text
+        let password = self.passwordTF.text
+        let email = self.emailTF.text
+        let pointsEarned = 0
+        let treesPlanted = 0
         
         
-        if (count(firstName.utf16) < 1 || count(lastName.utf16) < 1){
-            var alert = UIAlertController(title: "Invalid", message: "Enter enter a valid First and Last name.", preferredStyle: .Alert)
+        if (firstName!.utf16.count < 1 || lastName!.utf16.count < 1){
+            let alert = UIAlertController(title: "Invalid", message: "Enter enter a valid First and Last name.", preferredStyle: .Alert)
             let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                 //...
             }
@@ -81,9 +81,9 @@ class SignViewController: UIViewController{
             self.presentViewController(alert, animated: true, completion: nil)
             
         }
-        else if (count(username.utf16) < 3 || count(password.utf16) < 3){
+        else if (username!.utf16.count < 3 || password!.utf16.count < 3){
             
-            var alert = UIAlertController(title: "Invalid", message: "Username and Password are too short.", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Invalid", message: "Username and Password are too short.", preferredStyle: .Alert)
             let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                 //...
             }
@@ -91,9 +91,9 @@ class SignViewController: UIViewController{
             
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        else if (count(email.utf16) < 10) {
+        else if (email!.utf16.count < 10) {
             
-            var alert = UIAlertController(title: "Invalid", message: "Please enter a valid email", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Invalid", message: "Please enter a valid email", preferredStyle: .Alert)
             let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                 //...
             }
@@ -104,7 +104,7 @@ class SignViewController: UIViewController{
         }
         else if (checkBox.selected == false)
         {
-                var alert = UIAlertController(title: "Invalid", message: "Check the box in order to proceed", preferredStyle: .Alert)
+                let alert = UIAlertController(title: "Invalid", message: "Check the box in order to proceed", preferredStyle: .Alert)
                 let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                     //...
                 }
@@ -117,7 +117,7 @@ class SignViewController: UIViewController{
             
             self.actInd.startAnimating()
             
-            var newUser = PFUser()
+            let newUser = PFUser()
             
             newUser["firstName"] = firstName
             newUser["lastName"] = lastName
@@ -132,7 +132,7 @@ class SignViewController: UIViewController{
                 self.actInd.stopAnimating()
                 
                 if ((error) != nil) {
-                    var alert = UIAlertController(title: "Error", message: "Oops! Username \(username) is already taken. Enter a different username.", preferredStyle: .Alert)
+                    let alert = UIAlertController(title: "Error", message: "Oops! Username \(username) is already taken. Enter a different username.", preferredStyle: .Alert)
                     let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                         //...
                     }
@@ -143,7 +143,7 @@ class SignViewController: UIViewController{
                 }
                 else
                 {
-                    var alert = UIAlertController(title: "Success", message: "Signed Up", preferredStyle: .Alert)
+                    let alert = UIAlertController(title: "Success", message: "Signed Up", preferredStyle: .Alert)
                     let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                     }

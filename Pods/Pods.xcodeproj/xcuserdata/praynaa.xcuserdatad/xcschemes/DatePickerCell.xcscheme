@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A240A2ACB041BD3C2C06630"
+               BlueprintIdentifier = "46D2C2F5479D6F9F45FF9460"
                BuildableName = "DatePickerCell.framework"
                BlueprintName = "DatePickerCell"
                ReferencedContainer = "container:Pods.xcodeproj">

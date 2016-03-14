@@ -68,13 +68,18 @@ class MapViewController: UIViewController {
         // 1
         let fileName = NSBundle.mainBundle().pathForResource("PublicArt", ofType: "json");
         var readError : NSError?
-        var data: NSData = NSData(contentsOfFile: fileName!, options: NSDataReadingOptions(0),
-            error: &readError)!
+        var data: NSData = try! NSData(contentsOfFile: fileName!, options: NSDataReadingOptions(rawValue: 0))
         
         // 2
         var error: NSError?
-        let jsonObject: AnyObject! = NSJSONSerialization.JSONObjectWithData(data,
-            options: NSJSONReadingOptions(0), error: &error)
+        let jsonObject: AnyObject!
+        do {
+            jsonObject = try NSJSONSerialization.JSONObjectWithData(data,
+                        options: NSJSONReadingOptions(rawValue: 0))
+        } catch var error1 as NSError {
+            error = error1
+            jsonObject = nil
+        }
         
         // 3
         if let jsonObject = jsonObject as? [String: AnyObject] where error == nil,
@@ -95,7 +100,7 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
     // 1
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
         if let annotation = annotation as? Artwork {
             let identifier = "pin"
             var view: MKPinAnnotationView
@@ -117,8 +122,8 @@ extension MapViewController: MKMapViewDelegate {
         return nil
     }
     
-    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!,
-        calloutAccessoryControlTapped control: UIControl!) {
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
+        calloutAccessoryControlTapped control: UIControl) {
             let location = view.annotation as! Artwork
             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
             location.mapItem().openInMapsWithLaunchOptions(launchOptions)

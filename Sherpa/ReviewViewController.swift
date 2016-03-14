@@ -25,7 +25,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
         super.viewDidLoad()
         
         //Customizing the tint of the review content 
-        var color: UIColor = UIColor(red: 229/255.0, green: 147/255.0, blue: 52/255.0, alpha: 100.0)
+        let color: UIColor = UIColor(red: 229/255.0, green: 147/255.0, blue: 52/255.0, alpha: 100.0)
         self.reviewContent.tintColor = color
         
         
@@ -48,10 +48,10 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
         
         
         // Labels init
-        var liveText = NSString(format: "%.2f", self.floatRatingView.rating) as String
-        println("Live:\(liveText)")
-        var updatedText = NSString(format: "%.2f", self.floatRatingView.rating) as String
-        println("Updated load:\(updatedText)")
+        let liveText = NSString(format: "%.2f", self.floatRatingView.rating) as String
+        print("Live:\(liveText)")
+        let updatedText = NSString(format: "%.2f", self.floatRatingView.rating) as String
+        print("Updated load:\(updatedText)")
         
         applyPlaceholderStyle(reviewContent!, placeholderText: PLACEHOLDER_TEXT)
         
@@ -66,8 +66,8 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
     @IBAction func reviewSubmitted(sender: AnyObject) {
         if (!self.enteredText){
             //wrong
-            println("Enter something")
-            var alert = UIAlertController(title: "Incomplete", message: "Oops. Please leave a comment about your experience.", preferredStyle: .Alert)
+            print("Enter something")
+            let alert = UIAlertController(title: "Incomplete", message: "Oops. Please leave a comment about your experience.", preferredStyle: .Alert)
             let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                 //...
             }
@@ -76,7 +76,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else{
-        var newReview = Review()
+        let newReview = Review()
         newReview.fromUser = PFUser.currentUser()!
         //get the tour thing from last class
         newReview.ratingGiven = self.finalRating
@@ -85,9 +85,9 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
         newReview.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
-                println("The object has been saved.")
+                print("The object has been saved.")
                 
-                var alert = UIAlertController(title: "Success!", message: "Your review has been submitted.", preferredStyle: .Alert)
+                let alert = UIAlertController(title: "Success!", message: "Your review has been submitted.", preferredStyle: .Alert)
                 let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                     //...
                     self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
@@ -98,15 +98,15 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
 
                 
                 //logic to calculate the review average
-                var newNumber = self.reviewedTour!.reviewsNum + 1
-                var total = self.reviewedTour!.cumulativeRating + self.finalRating
-                var avg: Double = Double(total) / Double(newNumber)
+                let newNumber = self.reviewedTour!.reviewsNum + 1
+                let total = self.reviewedTour!.cumulativeRating + self.finalRating
+                let avg: Double = Double(total) / Double(newNumber)
                 self.reviewedTour?.avgRating = Int(avg)
                 self.reviewedTour?.reviewsNum = newNumber
                 self.reviewedTour?.cumulativeRating = total
                
             } else {
-                println("There was a problem, check error.description for this")
+                print("There was a problem, check error.description for this")
             }
             self.reviewedTour?.saveInBackgroundWithBlock(nil)
         }
@@ -120,13 +120,13 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
     // MARK: FloatRatingViewDelegate
     
     func floatRatingView(ratingView: FloatRatingView, isUpdating rating:Float) {
-        var liveText = NSString(format: "%.2f", self.floatRatingView.rating) as String
-        println("Live:\(liveText)")
+        let liveText = NSString(format: "%.2f", self.floatRatingView.rating) as String
+        print("Live:\(liveText)")
     }
     
     func floatRatingView(ratingView: FloatRatingView, didUpdate rating: Float) {
-        var updatedText = NSString(format: "%.2f", self.floatRatingView.rating) as String
-        println("Updated inside:\(updatedText)")
+        let updatedText = NSString(format: "%.2f", self.floatRatingView.rating) as String
+        print("Updated inside:\(updatedText)")
         self.finalRating = Int(floatRatingView.rating)
     }
     
@@ -176,7 +176,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
         // if it's not empty, then the text should be black and not italic
         // BUT, we also need to remove the placeholder text if that's the only text
         // if it is empty, then the text should be the placeholder
-        let newLength = count("textView.text".utf16) + count(text.utf16) - range.length
+        let newLength = "textView.text".utf16.count + text.utf16.count - range.length
         self.enteredText = true
         
         if(text == "\n") {
@@ -190,7 +190,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
             // unless they've hit the delete button with the placeholder displayed
             if textView == reviewContent && textView.text == PLACEHOLDER_TEXT
             {
-                if count(text.utf16) == 0 // they hit the back button
+                if text.utf16.count == 0 // they hit the back button
                 {
                     return false // ignore it
                 }

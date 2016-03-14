@@ -113,7 +113,7 @@ class ReserveViewController: UIViewController, AKPickerViewDataSource, AKPickerV
     
     override func viewWillAppear(animated: Bool) {
         if let avgRating = avgRating {
-            println ("THIS IS \(avgRating)")
+            print ("THIS IS \(avgRating)")
             
             if (avgRating == 0){
                 reviewImage.image = UIImage(named : "1stars")
@@ -141,8 +141,8 @@ class ReserveViewController: UIViewController, AKPickerViewDataSource, AKPickerV
         super.viewDidAppear(animated)
         
         if (selectedTime == "1"){
-            var number = 2*40
-            var answer = String(number)
+            let number = 2*40
+            let answer = String(number)
             self.totalLabel.text = answer
         }
         
@@ -181,7 +181,7 @@ class ReserveViewController: UIViewController, AKPickerViewDataSource, AKPickerV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         // this gets a reference to the screen that we're about to transition to
-        var toViewController = segue.destinationViewController.topViewController as! ReviewViewController
+        var toViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ReviewViewController
         toViewController.reviewedTour = self.selectedTour
         
         // instead of using the default transition animation, we'll ask
@@ -249,11 +249,11 @@ class ReserveViewController: UIViewController, AKPickerViewDataSource, AKPickerV
     func pickerView(pickerView: AKPickerView, didSelectItem item: Int) {
         if(pickerView.tag == 1){
         self.selectedLanguage = self.languages[item]
-        println("Your language \(selectedLanguage)")
+        print("Your language \(selectedLanguage)")
         }
         else{
             self.selectedTime = self.time[item]
-            println("Your time \(selectedTime)")
+            print("Your time \(selectedTime)")
             if (selectedTime == "1"){
                 var number = 1*1
                 var answer = "$\(number).00"
@@ -281,7 +281,7 @@ class ReserveViewController: UIViewController, AKPickerViewDataSource, AKPickerV
     @IBAction func requestButtonPressed(sender: UIButton) {
             if (self.selectedLanguage == "None" || self.selectedTime == "None"){
                 //GIVES AN ERROR MESSAGE
-                var alert = UIAlertController(title: "Incomplete Request!", message: "Please select a payment type and number of trees to be planted.", preferredStyle: .Alert)
+                let alert = UIAlertController(title: "Incomplete Request!", message: "Please select a payment type and number of trees to be planted.", preferredStyle: .Alert)
                 let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                     //...
                 }
@@ -291,33 +291,33 @@ class ReserveViewController: UIViewController, AKPickerViewDataSource, AKPickerV
             }
             else{ //User has selected time, date and language
                 sender.backgroundColor = UIColor.grayColor()
-                var request = PFObject(className: "RequestTour")
+                let request = PFObject(className: "RequestTour")
                 request["requestedTime"] = self.selectedTime
                 if(selectedTime == "1"){
-                    var trees = PFUser.currentUser()!["treesPlanted"] as! Int + 1
+                    let trees = PFUser.currentUser()!["treesPlanted"] as! Int + 1
                     PFUser.currentUser()!["treesPlanted"] = trees
-                    var points = PFUser.currentUser()!["pointsEarned"] as! Int + 10
+                    let points = PFUser.currentUser()!["pointsEarned"] as! Int + 10
                     PFUser.currentUser()!["pointsEarned"] = points
                     PFUser.currentUser()?.saveInBackgroundWithBlock(nil)
                 }
                 else if (selectedTime == "12"){
-                    var trees = PFUser.currentUser()!["treesPlanted"] as! Int + 12
+                    let trees = PFUser.currentUser()!["treesPlanted"] as! Int + 12
                     PFUser.currentUser()!["treesPlanted"] = trees
-                    var points = PFUser.currentUser()!["pointsEarned"] as! Int + 120
+                    let points = PFUser.currentUser()!["pointsEarned"] as! Int + 120
                     PFUser.currentUser()!["pointsEarned"] = points
                     PFUser.currentUser()?.saveInBackgroundWithBlock(nil)
                 }
                 else if (selectedTime == "40"){
-                    var trees = PFUser.currentUser()!["treesPlanted"] as! Int + 40
+                    let trees = PFUser.currentUser()!["treesPlanted"] as! Int + 40
                     PFUser.currentUser()!["treesPlanted"] = trees
-                    var points = PFUser.currentUser()!["pointsEarned"] as! Int + 400
+                    let points = PFUser.currentUser()!["pointsEarned"] as! Int + 400
                     PFUser.currentUser()!["pointsEarned"] = points
                     PFUser.currentUser()?.saveInBackgroundWithBlock(nil)
                 }
                 else if (selectedTime == "100"){
-                    var trees = PFUser.currentUser()!["treesPlanted"] as! Int + 100
+                    let trees = PFUser.currentUser()!["treesPlanted"] as! Int + 100
                     PFUser.currentUser()!["treesPlanted"] = trees
-                    var points = PFUser.currentUser()!["pointsEarned"] as! Int + 1000
+                    let points = PFUser.currentUser()!["pointsEarned"] as! Int + 1000
                     PFUser.currentUser()!["pointsEarned"] = points
                     PFUser.currentUser()?.saveInBackgroundWithBlock(nil)
                 }
@@ -335,7 +335,7 @@ class ReserveViewController: UIViewController, AKPickerViewDataSource, AKPickerV
                 
                 request.saveInBackgroundWithBlock{(success: Bool, error: NSError?) -> Void in
                     if (success){
-                        var alert = UIAlertController(title: "Donation Sent!", message: "Check the DashBoard for your earned points.", preferredStyle: .Alert)
+                        let alert = UIAlertController(title: "Donation Sent!", message: "Check the DashBoard for your earned points.", preferredStyle: .Alert)
                         let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                             //...
                             self.navigationController?.popToRootViewControllerAnimated(true)
@@ -345,7 +345,7 @@ class ReserveViewController: UIViewController, AKPickerViewDataSource, AKPickerV
                         self.presentViewController(alert, animated: true, completion: nil)
                     }
                     else{
-                        println("Boy kya scene")
+                        print("Boy kya scene")
                     }
                 }
             }

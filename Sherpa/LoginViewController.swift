@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
     super.viewDidLoad()
     
     //Changing tint color
-    var color: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 100.0)
+    let color: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 100.0)
     self.usernameTF.tintColor = color
     self.passwordTF.tintColor = color
     
@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         startViewController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as? UIViewController
     } else {
-        println("No user is logged in. \n Login or signup")
+        print("No user is logged in. \n Login or signup")
     }
     
     
@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
         var password = self.passwordTF.text
         
         
-        if (count(username.utf16) < 3 || count(password.utf16) < 3){
+        if (username!.utf16.count < 3 || password!.utf16.count < 3){
             
             var alert = UIAlertController(title: "Invalid", message: "Username and Password are too short.", preferredStyle: .Alert)
             let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
@@ -79,7 +79,7 @@ class LoginViewController: UIViewController {
         {
             self.actInd.startAnimating()
             
-            PFUser.logInWithUsernameInBackground(username, password: password, block: {(user, error) -> Void in
+            PFUser.logInWithUsernameInBackground(username!, password: password!, block: {(user, error) -> Void in
                 
                 self.actInd.stopAnimating()
                 
