@@ -66,6 +66,7 @@
 		F1EEC46D1B6007B1008A04CF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EEC46C1B6007B1008A04CF /* libsqlite3.dylib */; };
 		F1EEC46F1B6007BC008A04CF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EEC46E1B6007BC008A04CF /* Accounts.framework */; };
 		F1EEC4711B6007C2008A04CF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EEC4701B6007C2008A04CF /* Social.framework */; };
+		F1F84D251C96720600BAA84E /* GeneralTrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D241C96720600BAA84E /* GeneralTrendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		F1EEC46C1B6007B1008A04CF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F1EEC46E1B6007BC008A04CF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		F1EEC4701B6007C2008A04CF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F1F84D241C96720600BAA84E /* GeneralTrendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralTrendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 				F1A628F41B76E87700ABFB8E /* MainViewController.swift */,
 				A49B61321B5B9E0D00F81B3D /* CallViewController.swift */,
 				659F00481B5ADECE00E4267B /* Main.storyboard */,
+				F1F84D241C96720600BAA84E /* GeneralTrendsViewController.swift */,
 				F1EEC44F1B5F06B4008A04CF /* ParseLoginHelper.swift */,
 				659895B31B5B989F00607B5E /* LoginViewController.swift */,
 				F1BB0B8A1B7708B50031FB6A /* SignViewController.swift */,
@@ -514,6 +517,7 @@
 				659895B01B5B253600607B5E /* Review.swift in Sources */,
 				F1EEC4591B5F339F008A04CF /* ErrorHandling.swift in Sources */,
 				F1B7AB2B1B713FC60036DEFE /* Request.swift in Sources */,
+				F1F84D251C96720600BAA84E /* GeneralTrendsViewController.swift in Sources */,
 				E2A3444E1B5B370F004CAF3A /* ToursTableCell.swift in Sources */,
 				F1BB0B8B1B7708B50031FB6A /* SignViewController.swift in Sources */,
 				F109F9221B89CE5C00B14050 /* ActivityViewCell.swift in Sources */,
