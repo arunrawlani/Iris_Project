@@ -2180,7 +2180,7 @@
     <resources>
         <image name="3stars" width="118" height="36"/>
         <image name="App Background" width="375" height="667"/>
-        <image name="CheckBox" width="196" height="196"/>
+        <image name="CheckBox" width="25" height="25"/>
         <image name="Dashboard Background" width="375" height="667"/>
         <image name="DisplayPicture" width="79" height="77"/>
         <image name="ExploreIcon" width="28" height="27"/>
@@ -2191,7 +2191,7 @@
         <image name="Rectangle" width="375" height="2"/>
         <image name="StarEmpty" width="46" height="44"/>
         <image name="StarFull" width="46" height="44"/>
-        <image name="UncheckBox" width="196" height="196"/>
+        <image name="UncheckBox" width="25" height="25"/>
         <image name="activityIcon" width="32" height="24"/>
         <image name="irisLogo" width="110" height="110"/>
         <image name="irisNameLogo" width="122" height="50"/>

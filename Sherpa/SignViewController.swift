@@ -40,7 +40,7 @@ class SignViewController: UIViewController{
         
         
         //Customizing tint of the text fields
-        var color: UIColor = UIColor(red: 55.0/255.0, green: 198.0/255.0, blue: 144.0/255.0, alpha: 100.0)
+        var color: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 100.0)
         self.firstNameTF.tintColor = color
         self.lastNameTF.tintColor = color
         self.usernameTF.tintColor = color

@@ -128,10 +128,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate{
     */
     
     //MARK: Changing the colour of the naviagtion bar
-    UINavigationBar.appearance().barTintColor = UIColor(red: 55/255.0, green: 198/255.0, blue: 144/255.0, alpha: 100.0)
+    UINavigationBar.appearance().barTintColor = UIColor(red: 74/255.0, green: 72/255.0, blue: 72/255.0, alpha: 100.0)
     UINavigationBar.appearance().tintColor = UIColor.whiteColor()
     UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-    UINavigationBar.appearance().translucent = false
+    UINavigationBar.appearance().translucent = true
     UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
     
 
