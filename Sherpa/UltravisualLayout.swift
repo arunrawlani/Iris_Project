@@ -83,9 +83,11 @@ class UltravisualLayout: UICollectionViewLayout {
     for item in 0..<numberOfItems {
       let indexPath = NSIndexPath(forItem: item, inSection: 0)
       let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-      /* Important because each cell has to slide over the top of the previous one */
+     
+    /* Important because each cell has to slide over the top of the previous one */
       attributes.zIndex = item
-      /* Initially set the height of the cell to the standard height */
+     
+    /* Initially set the height of the cell to the standard height */
       var height = standardHeight
       if indexPath.item == featuredItemIndex {
         /* The featured cell */

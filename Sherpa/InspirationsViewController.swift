@@ -19,6 +19,8 @@ class InspirationsViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.navigationController?.navigationBarHidden = true
+    
     if let patternImage = UIImage(named: "Pattern") {
       view.backgroundColor = UIColor(patternImage: patternImage)
     }
