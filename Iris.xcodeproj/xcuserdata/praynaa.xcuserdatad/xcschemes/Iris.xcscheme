@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "659F003E1B5ADECE00E4267B"
                BuildableName = "dollarTree.app"
-               BlueprintName = "dollarTree"
-               ReferencedContainer = "container:dollarTree.xcodeproj">
+               BlueprintName = "Iris"
+               ReferencedContainer = "container:Iris.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "659F003E1B5ADECE00E4267B"
             BuildableName = "dollarTree.app"
-            BlueprintName = "dollarTree"
-            ReferencedContainer = "container:dollarTree.xcodeproj">
+            BlueprintName = "Iris"
+            ReferencedContainer = "container:Iris.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -54,8 +54,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "659F003E1B5ADECE00E4267B"
             BuildableName = "dollarTree.app"
-            BlueprintName = "dollarTree"
-            ReferencedContainer = "container:dollarTree.xcodeproj">
+            BlueprintName = "Iris"
+            ReferencedContainer = "container:Iris.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -73,8 +73,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "659F003E1B5ADECE00E4267B"
             BuildableName = "dollarTree.app"
-            BlueprintName = "dollarTree"
-            ReferencedContainer = "container:dollarTree.xcodeproj">
+            BlueprintName = "Iris"
+            ReferencedContainer = "container:Iris.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

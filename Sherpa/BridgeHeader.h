@@ -9,8 +9,8 @@
 #ifndef _BridgeHeader_h
 #define _BridgeHeader_h
 
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
+
 #import <Sinch/Sinch.h>
 
 #endif
