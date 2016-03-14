@@ -1181,13 +1181,13 @@
                                             <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ3-ZO-gJR">
-                                            <rect key="frame" x="191" y="207" width="196" height="40"/>
+                                            <rect key="frame" x="191" y="207" width="196" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="196" id="ytk-FC-hzj"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                             <state key="normal" title="LOG IN" backgroundImage="Login Button">
-                                                <color key="titleColor" red="0.21568627450980393" green="0.77647058823529413" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -1340,7 +1340,7 @@
                                                 <constraint firstAttribute="width" constant="196" id="GHe-d7-VO7"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
-                                            <state key="normal" title="SIGN UP" backgroundImage="Signup Button">
+                                            <state key="normal" title="SIGN UP" backgroundImage="Login Button">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -2185,11 +2185,10 @@
         <image name="DisplayPicture" width="79" height="77"/>
         <image name="ExploreIcon" width="28" height="27"/>
         <image name="HumanIcon" width="20" height="28"/>
-        <image name="Login Button" width="228" height="40"/>
+        <image name="Login Button" width="229" height="48"/>
         <image name="NewYork" width="375" height="265"/>
         <image name="Or" width="287" height="26"/>
         <image name="Rectangle" width="375" height="2"/>
-        <image name="Signup Button" width="236" height="48"/>
         <image name="StarEmpty" width="46" height="44"/>
         <image name="StarFull" width="46" height="44"/>
         <image name="UncheckBox" width="196" height="196"/>
