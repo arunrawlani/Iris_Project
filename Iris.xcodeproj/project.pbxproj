@@ -15,7 +15,7 @@
 		659F004A1B5ADECE00E4267B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659F00481B5ADECE00E4267B /* Main.storyboard */; };
 		659F004C1B5ADECE00E4267B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659F004B1B5ADECE00E4267B /* Images.xcassets */; };
 		659F004F1B5ADECE00E4267B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659F004D1B5ADECE00E4267B /* LaunchScreen.xib */; };
-		659F005B1B5ADECE00E4267B /* SherpaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F005A1B5ADECE00E4267B /* SherpaTests.swift */; };
+		659F005B1B5ADECE00E4267B /* IrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F005A1B5ADECE00E4267B /* IrisTests.swift */; };
 		A49B61331B5B9E0D00F81B3D /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B61321B5B9E0D00F81B3D /* CallViewController.swift */; };
 		A4E6BEE71B5B7E2600F1D0A1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E6BEE61B5B7E2600F1D0A1 /* Security.framework */; };
 		A4E6BEE91B5B7E4F00F1D0A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E6BEE81B5B7E4F00F1D0A1 /* AVFoundation.framework */; };
@@ -101,7 +101,7 @@
 		659F004E1B5ADECE00E4267B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		659F00541B5ADECE00E4267B /* IrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		659F00591B5ADECE00E4267B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		659F005A1B5ADECE00E4267B /* SherpaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SherpaTests.swift; sourceTree = "<group>"; };
+		659F005A1B5ADECE00E4267B /* IrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrisTests.swift; sourceTree = "<group>"; };
 		A49B61321B5B9E0D00F81B3D /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		A4E6BEE61B5B7E2600F1D0A1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A4E6BEE81B5B7E4F00F1D0A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				659F00411B5ADECE00E4267B /* Iris */,
-				659F00571B5ADECE00E4267B /* dollarTreeTests */,
+				659F00571B5ADECE00E4267B /* IrisTests */,
 				659F00401B5ADECE00E4267B /* Products */,
 				09F94F2278F539BB0D25A8B0 /* Pods */,
 				F3F325134F7855C435F574E4 /* Frameworks */,
@@ -273,13 +273,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		659F00571B5ADECE00E4267B /* dollarTreeTests */ = {
+		659F00571B5ADECE00E4267B /* IrisTests */ = {
 			isa = PBXGroup;
 			children = (
-				659F005A1B5ADECE00E4267B /* SherpaTests.swift */,
+				659F005A1B5ADECE00E4267B /* IrisTests.swift */,
 				659F00581B5ADECE00E4267B /* Supporting Files */,
 			);
-			name = dollarTreeTests;
+			name = IrisTests;
 			path = SherpaTests;
 			sourceTree = "<group>";
 		};
@@ -647,7 +647,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659F005B1B5ADECE00E4267B /* SherpaTests.swift in Sources */,
+				659F005B1B5ADECE00E4267B /* IrisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

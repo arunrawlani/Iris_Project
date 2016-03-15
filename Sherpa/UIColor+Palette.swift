@@ -2,8 +2,6 @@
 //  UIColor+Palette.swift
 //  Ultravisual
 //
-//  Created by Mic Pringle on 20/03/2015.
-//  Copyright (c) 2015 Razeware LLC. All rights reserved.
 //
 
 import UIKit

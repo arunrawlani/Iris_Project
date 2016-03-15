@@ -1,9 +1,5 @@
 //
 //  ActivityViewCell.swift
-//  dollarTree
-//
-//  Created by Arun Rawlani on 23/8/15.
-//  Copyright (c) 2015 Arun Rawlani. All rights reserved.
 //
 
 import Foundation

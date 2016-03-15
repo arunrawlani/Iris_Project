@@ -1,9 +1,5 @@
 //
 //  PhotoTakingHelper.swift
-//  Sherpa
-//
-//  Created by Praynaa Rawlani on 8/11/15.
-//  Copyright (c) 2015 Arun Rawlani. All rights reserved.
 //
 
 import UIKit
