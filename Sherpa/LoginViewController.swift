@@ -15,15 +15,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     var window: UIWindow?
     
-    var currentUser: PFUser?
+    var currentUser: PFUser? //forms object for the current user
     var startViewController: UIViewController?
     
   
-    var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
+    var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView //creates activity indicator that will activate when log in is pressed
     
   
   override func viewDidLoad() {
-    super.viewDidLoad()
+    super.viewDidLoad() //loads the view
     
     //Changing tint color
     let color: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 100.0)
@@ -37,11 +37,11 @@ class LoginViewController: UIViewController {
     
     self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
     
-    view.addSubview(self.actInd)
+    view.addSubview(self.actInd) //adds the activity indicator to the subview
     
     //this causes our activity indicator to be in the center of the view with colour White
     
-    if currentUser != nil {
+    if currentUser != nil { //If user is logged in, switch to the main screen
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         startViewController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as? UIViewController
     } else {
@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
         var password = self.passwordTF.text
         
         
-        if (username!.utf16.count < 3 || password!.utf16.count < 3){
+        if (username!.utf16.count < 3 || password!.utf16.count < 3){ //checks if username and password is valid
             
             var alert = UIAlertController(title: "Invalid", message: "Username and Password are too short.", preferredStyle: .Alert)
             let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
 
           }
         
-        else
+        else //logs in
         {
             self.actInd.startAnimating()
             
@@ -104,8 +104,10 @@ class LoginViewController: UIViewController {
             })
         }
 }
-    
+   
 }
+
+//UNUSED CODE FOR TWITTER, GOOGLE AND FB LOGIN
   /*
 // func loginAction() {
     let username = usernameTF.text

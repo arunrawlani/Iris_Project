@@ -10,7 +10,7 @@ import MapKit
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-    var artworks = [Artwork]()
+    var artworks = [Artwork]() //loads the art work from the Artwork.swift file to visualize on the map
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,6 @@ class MapViewController: UIViewController {
         loadInitialData()
         mapView.addAnnotations(artworks)
         
-        // show artwork on map
-        /*   let artwork = Artwork(title: "King David Kalakaua",
-        locationName: "Waikiki Gateway Park",
-        discipline: "Sculpture",
-        coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
-        
-        mapView.addAnnotation(artwork) */
     }
     
     // MARK: - location manager to authorize user location for Maps app
@@ -62,7 +55,7 @@ class MapViewController: UIViewController {
     
     func loadInitialData() {
         // 1
-        let fileName = NSBundle.mainBundle().pathForResource("PublicArt", ofType: "json");
+        let fileName = NSBundle.mainBundle().pathForResource("PublicArt", ofType: "json"); //selects file to get the information
         var readError : NSError?
         var data: NSData = try! NSData(contentsOfFile: fileName!, options: NSDataReadingOptions(rawValue: 0))
         

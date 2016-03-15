@@ -7,16 +7,16 @@ import UIKit
 
 class InspirationsViewController: UICollectionViewController {
   
-  let inspirations = Inspiration.allInspirations()
+  let inspirations = Inspiration.allInspirations() //Create an inspiraton object using the data model 'Inspiration'
   
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return UIStatusBarStyle.LightContent
+    return UIStatusBarStyle.LightContent //changes styles of the status bar
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.navigationController?.navigationBarHidden = true
+    self.navigationController?.navigationBarHidden = true //hides the navigation bar
     
     if let patternImage = UIImage(named: "Pattern") {
       view.backgroundColor = UIColor(patternImage: patternImage)
@@ -33,10 +33,12 @@ extension InspirationsViewController {
     return 1
   }
   
-  override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//forms the right amoutn of cells according to the Inspirations.plist file
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return inspirations.count
   }
   
+//fills every cell according to the respective element information in the Inspirations.plist file
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("InspirationCell", forIndexPath: indexPath) as! InspirationCell
     cell.inspiration = inspirations[indexPath.item]
