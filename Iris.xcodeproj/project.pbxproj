@@ -74,6 +74,7 @@
 		F1F84D3C1C9687C300BAA84E /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D3A1C9687C300BAA84E /* Inspiration.swift */; };
 		F1F84D3D1C9687C300BAA84E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D3B1C9687C300BAA84E /* Session.swift */; };
 		F1F84D401C96886200BAA84E /* InspirationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D3F1C96886200BAA84E /* InspirationCell.swift */; };
+		F1F84D421C9D3EFD00BAA84E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D411C9D3EFD00BAA84E /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		F1F84D3A1C9687C300BAA84E /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
 		F1F84D3B1C9687C300BAA84E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F1F84D3F1C96886200BAA84E /* InspirationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationCell.swift; sourceTree = "<group>"; };
+		F1F84D411C9D3EFD00BAA84E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				F1F84D301C96846600BAA84E /* InspirationsViewController.swift */,
+				F1F84D411C9D3EFD00BAA84E /* SearchViewController.swift */,
 				E2A344411B5B053C004CAF3A /* TableViewForExplore.swift */,
 				F109F9231B89CE6F00B14050 /* ActivityViewController.swift */,
 				F109F9111B898D4100B14050 /* MapViewController.swift */,
@@ -626,6 +629,7 @@
 				E2A3444C1B5B3140004CAF3A /* ToursViewController.swift in Sources */,
 				F1B7AB311B7342120036DEFE /* RequestTableViewCell.swift in Sources */,
 				E2A344401B5B0516004CAF3A /* AppData.swift in Sources */,
+				F1F84D421C9D3EFD00BAA84E /* SearchViewController.swift in Sources */,
 				A49B61331B5B9E0D00F81B3D /* CallViewController.swift in Sources */,
 				F1F84D3D1C9687C300BAA84E /* Session.swift in Sources */,
 				F1F84D401C96886200BAA84E /* InspirationCell.swift in Sources */,
