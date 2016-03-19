@@ -44,5 +44,13 @@ extension InspirationsViewController {
     cell.inspiration = inspirations[indexPath.item]
     return cell
   }
+  
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let layout = collectionViewLayout as! UltravisualLayout
+        let offset = layout.dragOffset * CGFloat(indexPath.item)
+        if collectionView.contentOffset.y != offset {
+            collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
+        }
+    }
 
 }
