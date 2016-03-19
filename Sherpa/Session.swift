@@ -13,6 +13,7 @@ class Session {
   var room: String
   var time: String
   var backgroundImage: UIImage
+  var website: String
   
   var roomAndTime: String {
     get {
@@ -20,12 +21,13 @@ class Session {
     }
   }
   
-  init(title: String, speaker: String, room: String, time: String, backgroundImage: UIImage) {
+    init(title: String, speaker: String, room: String, time: String, backgroundImage: UIImage, website: String) {
     self.title = title
     self.speaker = speaker
     self.room = room
     self.time = time
     self.backgroundImage = backgroundImage
+    self.website = website
   }
   
   convenience init(dictionary: NSDictionary) {
@@ -35,7 +37,8 @@ class Session {
     let time = dictionary["Time"] as? String
     let backgroundName = dictionary["Background"] as? String
     let backgroundImage = UIImage(named: backgroundName!)
-    self.init(title: title!, speaker: speaker!, room: room!, time: time!, backgroundImage: backgroundImage!.decompressedImage)
+    let website = dictionary["Website"] as? String
+    self.init(title: title!, speaker: speaker!, room: room!, time: time!, backgroundImage: backgroundImage!.decompressedImage, website: website!)
   }
 
 }

@@ -51,6 +51,11 @@ extension InspirationsViewController {
         if collectionView.contentOffset.y != offset {
             collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
         }
+        else{
+            let urlshit = inspirations[indexPath.item].website;
+            print(urlshit);
+            
+        }
     }
 
 }
