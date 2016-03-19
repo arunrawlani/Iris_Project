@@ -52,8 +52,11 @@ extension InspirationsViewController {
             collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
         }
         else{
-            let urlshit = inspirations[indexPath.item].website;
-            print(urlshit);
+            let urlstored = NSURL(string: inspirations[indexPath.item].website);
+            print(urlstored);
+            if UIApplication.sharedApplication().canOpenURL(urlstored!) {
+                UIApplication.sharedApplication().openURL(urlstored!)
+            }
             
         }
     }
