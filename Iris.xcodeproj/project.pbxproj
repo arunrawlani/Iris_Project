@@ -75,6 +75,9 @@
 		F1F84D3D1C9687C300BAA84E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D3B1C9687C300BAA84E /* Session.swift */; };
 		F1F84D401C96886200BAA84E /* InspirationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D3F1C96886200BAA84E /* InspirationCell.swift */; };
 		F1F84D421C9D3EFD00BAA84E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D411C9D3EFD00BAA84E /* SearchViewController.swift */; };
+		F1F84D441C9E2E2200BAA84E /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D431C9E2E2200BAA84E /* SearchResultsViewController.swift */; };
+		F1F84D461C9F4E3000BAA84E /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F84D451C9F4E3000BAA84E /* SearchResultCell.swift */; };
+		F1F84D481C9F60D400BAA84E /* Articles.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F84D471C9F60D400BAA84E /* Articles.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +166,9 @@
 		F1F84D3B1C9687C300BAA84E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F1F84D3F1C96886200BAA84E /* InspirationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspirationCell.swift; sourceTree = "<group>"; };
 		F1F84D411C9D3EFD00BAA84E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F1F84D431C9E2E2200BAA84E /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		F1F84D451C9F4E3000BAA84E /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		F1F84D471C9F60D400BAA84E /* Articles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Articles.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,7 @@
 			children = (
 				F109F9131B898D6A00B14050 /* Artwork.swift */,
 				F1EEC44C1B5EF4FF008A04CF /* BridgeHeader.h */,
+				F1F84D471C9F60D400BAA84E /* Articles.json */,
 				F109F9171B898DF200B14050 /* PublicArt.json */,
 				659F00431B5ADECE00E4267B /* Info.plist */,
 				F1B7AB2C1B72ABF90036DEFE /* TransitionManager.swift */,
@@ -342,6 +349,7 @@
 			children = (
 				F1F84D301C96846600BAA84E /* InspirationsViewController.swift */,
 				F1F84D411C9D3EFD00BAA84E /* SearchViewController.swift */,
+				F1F84D431C9E2E2200BAA84E /* SearchResultsViewController.swift */,
 				E2A344411B5B053C004CAF3A /* TableViewForExplore.swift */,
 				F109F9231B89CE6F00B14050 /* ActivityViewController.swift */,
 				F109F9111B898D4100B14050 /* MapViewController.swift */,
@@ -366,6 +374,7 @@
 		F1F84D2D1C96831B00BAA84E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1F84D451C9F4E3000BAA84E /* SearchResultCell.swift */,
 				F1F84D3F1C96886200BAA84E /* InspirationCell.swift */,
 				F109F9211B89CE5C00B14050 /* ActivityViewCell.swift */,
 				F1B7AB301B7342120036DEFE /* RequestTableViewCell.swift */,
@@ -531,6 +540,7 @@
 				F109F9181B898DF200B14050 /* PublicArt.json in Resources */,
 				659F004F1B5ADECE00E4267B /* LaunchScreen.xib in Resources */,
 				F1F84D271C9680E300BAA84E /* Inspirations.xcassets in Resources */,
+				F1F84D481C9F60D400BAA84E /* Articles.json in Resources */,
 				659F004C1B5ADECE00E4267B /* Images.xcassets in Resources */,
 				F178CEF81B7BC77D00B5642D /* PopDateViewController.xib in Resources */,
 				F1F84D291C96811600BAA84E /* Inspirations.plist in Resources */,
@@ -608,6 +618,7 @@
 				F1EEC4591B5F339F008A04CF /* ErrorHandling.swift in Sources */,
 				F1B7AB2B1B713FC60036DEFE /* Request.swift in Sources */,
 				F1F84D381C96879B00BAA84E /* UltravisualLayout.swift in Sources */,
+				F1F84D461C9F4E3000BAA84E /* SearchResultCell.swift in Sources */,
 				F1F84D251C96720600BAA84E /* GeneralTrendsViewController.swift in Sources */,
 				F1F84D311C96846600BAA84E /* InspirationsViewController.swift in Sources */,
 				E2A3444E1B5B370F004CAF3A /* ToursTableCell.swift in Sources */,
@@ -640,6 +651,7 @@
 				659F00451B5ADECE00E4267B /* AppDelegate.swift in Sources */,
 				F178CEF61B7BC72000B5642D /* PopDateViewController.swift in Sources */,
 				F109F9201B89CA5E00B14050 /* Activity.swift in Sources */,
+				F1F84D441C9E2E2200BAA84E /* SearchResultsViewController.swift in Sources */,
 				F1A628F51B76E87700ABFB8E /* MainViewController.swift in Sources */,
 				F109F9161B898D9000B14050 /* JSON.swift in Sources */,
 				E2A3445A1B5C21CA004CAF3A /* TimelineViewController.swift in Sources */,

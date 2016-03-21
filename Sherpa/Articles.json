@@ -1,0 +1,42 @@
+{
+    "articles": [{
+    "link":"www.something.sm/datething/article",
+    "title":"Andi Rayhan sworn in as Indonesian President",
+    "summary": "Summary here. Like a paragraph. Essentially a preview of the article",
+    "keywords":{
+        "word1":15.5,"word2":9.8
+    },
+    "viewcount":"55"
+                 }, {
+                 "link":"www.something.sm/datething/article",
+                 "title":"Andi Rayhan sworn in as Indonesian President",
+                 "summary": "Summary here. Like a paragraph. Essentially a preview of the article",
+                 "keywords":{
+                 "word1":15.5,"word2":9.8
+                 },
+                 "viewcount":"55"
+                 },{
+                 "link":"www.something.sm/datething/article",
+                 "title":"Andi Rayhan sworn in as Indonesian President",
+                 "summary": "Summary here. Like a paragraph. Essentially a preview of the article",
+                 "keywords":{
+                 "word1":15.5,"word2":9.8
+                 },
+                 "viewcount":"55"
+                 },{
+                 "link":"www.something.sm/datething/article",
+                 "title":"Andi Rayhan sworn in as Indonesian President",
+                 "summary": "Summary here. Like a paragraph. Essentially a preview of the article",
+                 "keywords":{
+                 "word1":15.5,"word2":9.8
+                 },
+                 "viewcount":"55"
+                 },{
+                 "link":"www.something.sm/datething/article",
+                 "title":"Andi Rayhan sworn in as Indonesian President",
+                 "summary": "Summary here. Like a paragraph. Essentially a preview of the article",
+                 "keywords":{
+                 "word1":15.5,"word2":9.8
+                 },
+                 "viewcount":"55"
+                 }]}

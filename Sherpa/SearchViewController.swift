@@ -26,7 +26,7 @@ class SearchViewController: UITableViewController{
         searchController.dimsBackgroundDuringPresentation = false
         
         // Setup the Scope Bar
-        searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
+        searchController.searchBar.scopeButtonTitles = ["All", "Social", "Technology", "Disaster"]
         tableView.tableHeaderView = searchController.searchBar
         
         recentSearch = ["Donald Trump", "Bernie", "US Presidential Election", "Friends", "The Office", "World Cup", "Cricket", "Oculus VR"]
