@@ -8,9 +8,9 @@ import Parse
 class ActivityViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
-    var allActivity: [Activity] = []
+    var allActivity: [Activity] = [] //forms an array for the activities which will be used to populate table view. -check.
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { //Implements the viewDidLoad for basic view setup
         let activityQuery = Activity.query()
         activityQuery!.whereKey("toUser", equalTo: PFUser.currentUser()!)
         
@@ -24,7 +24,7 @@ class ActivityViewController: UIViewController{
     
 }
 
-extension ActivityViewController: UITableViewDataSource, UITableViewDelegate{
+extension ActivityViewController: UITableViewDataSource, UITableViewDelegate{ //Implements the data Source and basic table setup for table view
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
