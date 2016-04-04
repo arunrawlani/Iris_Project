@@ -12,7 +12,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var artworks = [Artwork]() //loads the art work from the Artwork.swift file to visualize on the map
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { //Implements the viewDidLoad for basic view setup
         super.viewDidLoad()
         mapView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,7 +36,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {// Implements the method to check authorization status
         super.viewDidAppear(animated)
         checkLocationAuthorizationStatus()
     }
@@ -46,7 +46,7 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    let regionRadius: CLLocationDistance = 100000
+    let regionRadius: CLLocationDistance = 100000 //specifies the region for which map is shown
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
             regionRadius * 50.0, regionRadius * 50.0)
@@ -54,12 +54,12 @@ class MapViewController: UIViewController {
     }
     
     func loadInitialData() {
-        // 1
+        //loads initial data from the hosted json file -check.
         let fileName = NSBundle.mainBundle().pathForResource("PublicArt", ofType: "json"); //selects file to get the information
         var readError : NSError?
         var data: NSData = try! NSData(contentsOfFile: fileName!, options: NSDataReadingOptions(rawValue: 0))
         
-        // 2
+        // Throws an error if JSON object is not as formatted -check.
         var error: NSError?
         let jsonObject: AnyObject!
         do {
@@ -70,13 +70,13 @@ class MapViewController: UIViewController {
             jsonObject = nil
         }
         
-        // 3
+        // Parses the JSON object to get it mapped
         if let jsonObject = jsonObject as? [String: AnyObject] where error == nil,
-            // 4
+        
             let jsonData = JSONValue.fromObject(jsonObject)?["data"]?.array {
                 for artworkJSON in jsonData {
                     if let artworkJSON = artworkJSON.array,
-                        // 5
+                    
                         artwork = Artwork.fromJSON(artworkJSON) {
                             artworks.append(artwork)
                     }
@@ -88,7 +88,7 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MKMapViewDelegate {
     
-    // 1
+    // Uses annotation and creates a view -check.
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
         if let annotation = annotation as? Artwork {
             let identifier = "pin"
@@ -98,7 +98,7 @@ extension MapViewController: MKMapViewDelegate {
                     dequeuedView.annotation = annotation
                     view = dequeuedView
             } else {
-                // 3
+                // Creates the pin on the map view and makes a detail disclosure pop up. -check.
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 view.pinColor = annotation.pinColor()
