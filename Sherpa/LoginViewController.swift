@@ -96,7 +96,7 @@ class LoginViewController: UIViewController {
             {
                 var alert = UIAlertController(title: "Error", message: "Please enter valid login parameters.", preferredStyle: .Alert)
                 let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
-                        //...
+                        //creates the alert view if invalid login parameters are inputted
                 }
                 alert.addAction(OKAction)
                 self.presentViewController(alert, animated: true, completion: nil)
