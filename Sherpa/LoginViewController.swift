@@ -145,7 +145,7 @@ class LoginViewController: UIViewController {
     
     
     
-    
+//WILL BE IMPLEMENTED IF TIME ALLOWS. FOR NOW NORMAL LOGIN WORKS.    
 /*
     @IBAction func facebookLogin() {
     println("#fuckitshipit")
