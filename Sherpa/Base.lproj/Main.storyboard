@@ -825,7 +825,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App Background" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-Sr-j06">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                             </imageView>
-                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search for articles..." translatesAutoresizingMaskIntoConstraints="NO" id="4fs-JA-Q6l">
+                            <searchBar contentMode="redraw" barStyle="black" text="" placeholder="Search for articles..." translatesAutoresizingMaskIntoConstraints="NO" id="4fs-JA-Q6l">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
