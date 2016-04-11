@@ -8,85 +8,39 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController{
+class SearchViewController: UIViewController, UISearchBarDelegate{
     
-    //MARK:Properties
-    let searchController = UISearchController(searchResultsController: nil)
-    var recentSearch = [String]()
-    var filteredResults = [String]()
+    @IBOutlet weak var searchBar: UISearchBar!
+     var searchActive : Bool = false
     
-    //MARK:Setup
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //setup the Search Controller
-        searchController.searchResultsUpdater = self;
-        searchController.searchBar.delegate = self;
-        definesPresentationContext = true
-        searchController.dimsBackgroundDuringPresentation = false
-        
-        // Setup the Scope Bar
-        searchController.searchBar.scopeButtonTitles = ["All", "Social", "Technology", "Disaster"]
-        tableView.tableHeaderView = searchController.searchBar
-        
-        recentSearch = ["Donald Trump", "Bernie", "US Presidential Election", "Friends", "The Office", "World Cup", "Cricket", "Oculus VR"]
-        
+        searchBar.delegate = self;
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        performSegueWithIdentifier("searchResults", sender: self)
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        //if we are updating user's recent searches array
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Table View
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.active && searchController.searchBar.text != "" {
-            return filteredResults.count
-        }
-        return recentSearch.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let result:String
-        if searchController.active && searchController.searchBar.text != "" {
-            result = filteredResults[indexPath.row]
-        } else {
-            result = recentSearch[indexPath.row]
-        }
-        cell.textLabel!.text = result
-        return cell
-    }
-    
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filteredResults = recentSearch.filter({(result: String) -> Bool in
-            let categoryMatch = (scope == "All")
-            return categoryMatch && result.lowercaseString.containsString(searchText.lowercaseString)
-        })
-        tableView.reloadData()
-    }
-    
-}
 
-extension SearchViewController: UISearchBarDelegate {
-    // MARK: - UISearchBar Delegate
-    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
-    }
-}
-
-extension SearchViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
-    }
+    
 }
