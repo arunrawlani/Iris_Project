@@ -18,6 +18,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     var searchJSON: JSON = []
     var arrDict :NSMutableArray=[]
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var expandButton: UIButton!
     
     //ADDING THE DELAY FUNCTION USED IN SWIFT SPINNER
     //ADDING SWIFT SPINNER
@@ -140,9 +141,11 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
         let strTitle : NSString=self.searchJSON[indexPath.row]["title"].string!
         let strSummary : NSString=self.searchJSON[indexPath.row]["summary"].string!
         let strViews: NSString=String(self.searchJSON[indexPath.row]["viewcount"])
+        let strLink: NSString=self.searchJSON[indexPath.row]["link"].string!
         cell.titleLabel.text = strTitle as String
         cell.summaryLabel.text = strSummary as String
         cell.viewLabel.text = strViews as String
+        cell.link = strLink as String
         
         return cell;
     }

@@ -222,6 +222,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="560" height="109.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-Li-EXH">
+                                                    <rect key="frame" x="488" y="12" width="51" height="30"/>
+                                                    <state key="normal" title="Expand">
+                                                        <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="expandArticle:" destination="8OD-vG-LTf" eventType="touchUpInside" id="qA6-mL-WTR"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkI-UO-8dZ">
                                                     <rect key="frame" x="10" y="10" width="271" height="20.5"/>
                                                     <constraints>
@@ -240,7 +249,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdT-OA-1Ez">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdT-OA-1Ez">
                                                     <rect key="frame" x="478" y="15" width="67" height="16.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="8sC-ot-EVC"/>
@@ -264,6 +273,8 @@
                                                 <constraint firstItem="0RC-bu-XLz" firstAttribute="leading" secondItem="6tS-aD-ncv" secondAttribute="leading" constant="10" id="RKw-Fh-hdu"/>
                                                 <constraint firstAttribute="trailing" secondItem="DtD-c3-7lR" secondAttribute="trailing" id="Sco-U4-CzK"/>
                                                 <constraint firstItem="DtD-c3-7lR" firstAttribute="leading" secondItem="6tS-aD-ncv" secondAttribute="leading" id="bI2-tZ-Gad"/>
+                                                <constraint firstItem="U9E-Li-EXH" firstAttribute="top" secondItem="6tS-aD-ncv" secondAttribute="top" constant="12" id="bfM-wO-vxO"/>
+                                                <constraint firstAttribute="trailing" secondItem="U9E-Li-EXH" secondAttribute="trailing" constant="24" id="by8-Ax-owR"/>
                                                 <constraint firstItem="vdT-OA-1Ez" firstAttribute="top" secondItem="6tS-aD-ncv" secondAttribute="top" constant="15" id="fEc-KA-KC5"/>
                                                 <constraint firstItem="0RC-bu-XLz" firstAttribute="top" secondItem="BkI-UO-8dZ" secondAttribute="bottom" constant="27" id="h9q-eI-rar"/>
                                                 <constraint firstAttribute="trailing" secondItem="vdT-OA-1Ez" secondAttribute="trailing" constant="15" id="iJw-es-ZAO"/>
@@ -276,6 +287,7 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
+                                                    <exclude reference="vdT-OA-1Ez"/>
                                                     <exclude reference="G49-E8-KQL"/>
                                                 </mask>
                                                 <mask key="constraints">
@@ -285,6 +297,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="expandButton" destination="U9E-Li-EXH" id="KRE-zs-Q0N"/>
                                             <outlet property="summaryLabel" destination="0RC-bu-XLz" id="7Nr-dw-YYs"/>
                                             <outlet property="titleLabel" destination="BkI-UO-8dZ" id="h5V-d9-8aZ"/>
                                             <outlet property="viewLabel" destination="vdT-OA-1Ez" id="bsk-Bu-vgs"/>
