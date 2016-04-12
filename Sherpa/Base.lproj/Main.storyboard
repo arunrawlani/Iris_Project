@@ -205,7 +205,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="App Background" translatesAutoresizingMaskIntoConstraints="NO" id="G6L-wx-fAC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQr-yD-LfV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQr-yD-LfV">
                                 <rect key="frame" x="20" y="28" width="560" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -222,9 +222,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="560" height="109.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-Li-EXH">
-                                                    <rect key="frame" x="488" y="12" width="51" height="30"/>
-                                                    <state key="normal" title="Expand">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-Li-EXH">
+                                                    <rect key="frame" x="508" y="12" width="40" height="40"/>
+                                                    <state key="normal" image="expandButton">
                                                         <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -274,7 +274,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="DtD-c3-7lR" secondAttribute="trailing" id="Sco-U4-CzK"/>
                                                 <constraint firstItem="DtD-c3-7lR" firstAttribute="leading" secondItem="6tS-aD-ncv" secondAttribute="leading" id="bI2-tZ-Gad"/>
                                                 <constraint firstItem="U9E-Li-EXH" firstAttribute="top" secondItem="6tS-aD-ncv" secondAttribute="top" constant="12" id="bfM-wO-vxO"/>
-                                                <constraint firstAttribute="trailing" secondItem="U9E-Li-EXH" secondAttribute="trailing" constant="24" id="by8-Ax-owR"/>
+                                                <constraint firstAttribute="trailing" secondItem="U9E-Li-EXH" secondAttribute="trailing" constant="12" id="by8-Ax-owR"/>
                                                 <constraint firstItem="vdT-OA-1Ez" firstAttribute="top" secondItem="6tS-aD-ncv" secondAttribute="top" constant="15" id="fEc-KA-KC5"/>
                                                 <constraint firstItem="0RC-bu-XLz" firstAttribute="top" secondItem="BkI-UO-8dZ" secondAttribute="bottom" constant="27" id="h9q-eI-rar"/>
                                                 <constraint firstAttribute="trailing" secondItem="vdT-OA-1Ez" secondAttribute="trailing" constant="15" id="iJw-es-ZAO"/>
@@ -1743,6 +1743,7 @@
         <image name="Rectangle" width="375" height="2"/>
         <image name="UncheckBox" width="25" height="25"/>
         <image name="activityIcon" width="32" height="32"/>
+        <image name="expandButton" width="40" height="40"/>
         <image name="irisLogo" width="110" height="110"/>
         <image name="irisNameLogo" width="122" height="50"/>
     </resources>
