@@ -14,6 +14,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     
     let yourJsonFormat: String = "JSONFile" // set text JSONFile : json data from file
     var searchURL: String?
+    var searchJSON: JSON = []
     var arrDict :NSMutableArray=[]
     @IBOutlet var tableview: UITableView!
     
@@ -43,13 +44,16 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
             SwiftSpinner.show("Extracting the Previews...")
         })
         
-        delay(seconds: 5.0, completion: {
+        delay(seconds: 5.5, completion: {
             SwiftSpinner.setTitleFont(nil)
             SwiftSpinner.show("Displaying \nArticles", animated: false)
         })
         
         delay(seconds: 6.0, completion: {
             SwiftSpinner.hide()
+            print(self.searchJSON)
+            print(self.searchJSON.count)
+            self.tableview.reloadData()
         })
         
     }
@@ -60,11 +64,9 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
         super.viewDidLoad()
         print(searchURL)
         self.demoSpinner()
-        print("message1")
-        print("message2")
+        
         Alamofire.request(.GET, searchURL!, encoding: .JSON).responseJSON { (req, res, json) -> Void in
-            let message = JSON(json.value!)
-            print(message)
+            self.searchJSON = JSON(json.value!)
         }
         
         if yourJsonFormat == "JSONFile" {
@@ -74,11 +76,13 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
         }
         // Do any additional setup after loading the view, typically from a nib.
         tableview.allowsSelection = false
+        tableview.reloadData();
 
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        tableview.reloadData();
     }
     
     //JSON PARSING: From URL
@@ -122,15 +126,15 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrDict.count;
+        return searchJSON.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SearchResultCell
         cell.backgroundColor = UIColor.clearColor()
-        let strTitle : NSString=arrDict[indexPath.row] .valueForKey("title") as! NSString
-        let strSummary : NSString=arrDict[indexPath.row] .valueForKey("summary") as! NSString
-        let strViews: NSString=arrDict[indexPath.row] .valueForKey("viewcount") as! NSString
+        let strTitle : NSString=self.searchJSON[indexPath.row]["title"].string!
+        let strSummary : NSString=self.searchJSON[indexPath.row]["summary"].string!
+        let strViews: NSString=String(self.searchJSON[indexPath.row]["viewcount"])
         cell.titleLabel.text = strTitle as String
         cell.summaryLabel.text = strSummary as String
         cell.viewLabel.text = strViews as String

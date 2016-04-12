@@ -17,6 +17,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     @IBOutlet weak var searchBar: UISearchBar!
     var searchActive : Bool = false
     var searchURL: String = ""
+    var searchJSON: JSON = []
     let recentSearches: [String] = ["Andi is a cocksucker", "Andi is a chutiya", "Andi sucks Abdullah"];
     let url = "https://nsapp.herokuapp.com/search?keyword="
     
@@ -35,6 +36,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         if segue.identifier == "searchResults" {
             let destinationVC = segue.destinationViewController as! SearchResultsViewController
             destinationVC.searchURL = self.searchURL
+            destinationVC.searchJSON = self.searchJSON
         }
     }
     
@@ -55,6 +57,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.searchURL = url + searchBar.text!.lowercaseString
+        Alamofire.request(.GET, self.searchURL, encoding: .JSON).responseJSON { (req, res, json) -> Void in
+            self.searchJSON = JSON(json.value!)
+            //print(self.searchJSON)
+            print("Here")
+        }
         performSegueWithIdentifier("searchResults", sender: self)
     }
     
