@@ -36,12 +36,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate{
         })
         
         delay(seconds: 4.0, completion: {
-            SwiftSpinner.show("Extracting Article Preview...")
+            SwiftSpinner.show("Extracting the Previews...")
         })
         
         delay(seconds: 5.0, completion: {
             SwiftSpinner.setTitleFont(nil)
-            SwiftSpinner.show("Showing Articles", animated: false)
+            SwiftSpinner.show("Displaying \nArticles", animated: false)
         })
         
         delay(seconds: 6.0, completion: {
