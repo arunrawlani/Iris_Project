@@ -7,18 +7,65 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class SearchResultsViewController: UIViewController, UITableViewDelegate , UITableViewDataSource{
     
     let yourJsonFormat: String = "JSONFile" // set text JSONFile : json data from file
-    // set text JSONUrl : json data from web url
-    
+    var searchURL: String?
     var arrDict :NSMutableArray=[]
-    
     @IBOutlet var tableview: UITableView!
+    
+    //ADDING THE DELAY FUNCTION USED IN SWIFT SPINNER
+    //ADDING SWIFT SPINNER
+    func delay(seconds seconds: Double, completion:()->()) {
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
+        
+        dispatch_after(popTime, dispatch_get_main_queue()) {
+            completion()
+        }
+    }
+    
+    func demoSpinner() {
+        
+        SwiftSpinner.showWithDelay(2.0, title: "It's taking longer than expected")
+        
+        delay(seconds: 0.0, completion: {
+            SwiftSpinner.show("Searching for \n Articles...")
+        })
+        
+        delay(seconds: 2.0, completion: {
+            SwiftSpinner.show("Fetching the \n Articles..")
+        })
+        
+        delay(seconds: 4.0, completion: {
+            SwiftSpinner.show("Extracting the Previews...")
+        })
+        
+        delay(seconds: 5.0, completion: {
+            SwiftSpinner.setTitleFont(nil)
+            SwiftSpinner.show("Displaying \nArticles", animated: false)
+        })
+        
+        delay(seconds: 6.0, completion: {
+            SwiftSpinner.hide()
+        })
+        
+    }
+    
+    //END OF SWIFT SPINNER
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(searchURL)
+        self.demoSpinner()
+        print("message1")
+        print("message2")
+        Alamofire.request(.GET, searchURL!, encoding: .JSON).responseJSON { (req, res, json) -> Void in
+            let message = JSON(json.value!)
+            print(message)
+        }
         
         if yourJsonFormat == "JSONFile" {
             jsonParsingFromFile()

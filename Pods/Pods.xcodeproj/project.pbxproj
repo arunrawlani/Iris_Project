@@ -325,7 +325,6 @@
 		6AF5999B6CC9BAC89865E394CF8C8428 /* FBSDKAccessTokenCacheV3_17.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A02ADB0E973920CBC98C7C19BC99E5 /* FBSDKAccessTokenCacheV3_17.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6B8968C5A30B8849E65C8B02046A7C45 /* PFCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C4C7C8AC911ADA5F92982161BFF538 /* PFCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B9160DA9CFD3499F6F72D421ABB69D7 /* PFURLSessionCommandRunner_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EF176F9F539AC1D4D7804700B3B3DD /* PFURLSessionCommandRunner_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6BAC85686327276B997C758C6F908266 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA9E1C49B52F378F4385450A8BA6AD /* SwiftyJSON.swift */; };
 		6BE26B6413F0A0C6A2A9371FF9C61A99 /* PFOfflineQueryLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B0F935C3E39357A68CE40E9C2A91F0 /* PFOfflineQueryLogic.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6C6344FFE3A3F13EDCDACC2014B46BC0 /* _FBSDKTemporaryErrorRecoveryAttempter.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD03A4053C33B330293C47DD166EA88 /* _FBSDKTemporaryErrorRecoveryAttempter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6C8AF28BB7BAC7ABDA6C3E75AE0DFC75 /* PFRelationState.h in Headers */ = {isa = PBXBuildFile; fileRef = 49804F2CA699698BD7661F88595022CC /* PFRelationState.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -682,6 +681,7 @@
 		F0C0A1D1AA685BCD00163DA5C341E006 /* PFCurrentConfigController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5865744191A89275D3106B2E8761266F /* PFCurrentConfigController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F1155C39B0EBD271BBD765EDA46138EC /* FBSDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE9B61411BCFE245B351869C1DB3370 /* FBSDKConstants.m */; };
 		F13B82DBDCD5750874746C7472D99651 /* PFObject+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = BCEB906F8971DE59C9723CE50BB8A0AB /* PFObject+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1678F231CBCCE3B001B6A32 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA9E1C49B52F378F4385450A8BA6AD /* SwiftyJSON.swift */; };
 		F1F1FAD0710933841E866CB066F4CA7F /* _FBSDKTemporaryErrorRecoveryAttempter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3F55247D5D57DFC0779B7258A1EB32 /* _FBSDKTemporaryErrorRecoveryAttempter.m */; };
 		F240CB563DCC9EC7E68003F82D44EDCD /* PFLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 768F38E219968EDA78BBA2238178BDE4 /* PFLogging.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F29DD7F4554ACC56813484F7B59F6465 /* PFConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF366EDA8C73943D6F456BD7A210C241 /* PFConfigController.m */; };
@@ -3622,7 +3622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77EB4E6F04B589C1B68F2C3B479D3451 /* SwiftyJSON-dummy.m in Sources */,
-				6BAC85686327276B997C758C6F908266 /* SwiftyJSON.swift in Sources */,
+				F1678F231CBCCE3B001B6A32 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

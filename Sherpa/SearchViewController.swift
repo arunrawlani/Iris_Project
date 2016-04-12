@@ -15,56 +15,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
 
     @IBOutlet weak var recentSearchesTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-     var searchActive : Bool = false
+    var searchActive : Bool = false
+    var searchURL: String = ""
     let recentSearches: [String] = ["Andi is a cocksucker", "Andi is a chutiya", "Andi sucks Abdullah"];
-    
-    //ADDING THE DELAY FUNCTION USED IN SWIFT SPINNER
-    //ADDING SWIFT SPINNER
-    func delay(seconds seconds: Double, completion:()->()) {
-        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
-        
-        dispatch_after(popTime, dispatch_get_main_queue()) {
-            completion()
-        }
-    }
-    
-    func demoSpinner() {
-        
-        SwiftSpinner.showWithDelay(2.0, title: "It's taking longer than expected")
-        
-        delay(seconds: 0.0, completion: {
-            SwiftSpinner.show("Searching for \n Articles...")
-        })
-        
-        delay(seconds: 2.0, completion: {
-            SwiftSpinner.show("Fetching the \n Articles..")
-        })
-        
-        delay(seconds: 4.0, completion: {
-            SwiftSpinner.show("Extracting the Previews...")
-        })
-        
-        delay(seconds: 5.0, completion: {
-            SwiftSpinner.setTitleFont(nil)
-            SwiftSpinner.show("Displaying \nArticles", animated: false)
-        })
-        
-        delay(seconds: 6.0, completion: {
-            SwiftSpinner.hide()
-        })
-        
-    }
-    
-    //END OF SWIFT SPINNER
+    let url = "https://nsapp.herokuapp.com/search?keyword="
     
     override func viewDidLoad() {
-        
-        Alamofire.request(.POST, "https://nsapp.herokuapp.com/login", parameters: ["email":"naoko@gmail.com", "password":"funahashi"], encoding: .JSON).response { (req, res, data, error) -> Void in
-            print(res)
-            let outputString = NSString(data: data!, encoding:NSUTF8StringEncoding)
-            print(outputString)
-        }
-        
         
         searchBar.delegate = self;
         
@@ -74,6 +30,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         
     }
     
+    override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
+        
+        if segue.identifier == "searchResults" {
+            let destinationVC = segue.destinationViewController as! SearchResultsViewController
+            destinationVC.searchURL = self.searchURL
+        }
+    }
     
     //DELEGATE UISEARCHBAR: Delegate methods for the search bar controller
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -91,7 +54,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.demoSpinner()
+        self.searchURL = url + searchBar.text!.lowercaseString
         performSegueWithIdentifier("searchResults", sender: self)
     }
     

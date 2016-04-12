@@ -7,12 +7,13 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import Parse
 import ParseUI
-
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
   
-    @IBOutlet weak var usernameTF: UITextField!
-    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var usernameTF: UITextField! //gets the username
+    @IBOutlet weak var passwordTF: UITextField! //gets the password
     var window: UIWindow?
     
     var currentUser: PFUser? //forms object for the current user
@@ -55,13 +56,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(sender: AnyObject) {
         
-        var username = self.usernameTF.text
-        var password = self.passwordTF.text
+        let username = self.usernameTF.text
+        let password = self.passwordTF.text
         
         
         if (username!.utf16.count < 3 || password!.utf16.count < 3){ //checks if username and password is valid
             
-            var alert = UIAlertController(title: "Invalid", message: "Username and Password are too short.", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Invalid", message: "Username and Password are too short.", preferredStyle: .Alert)
             let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                 //...
             }
@@ -74,38 +75,98 @@ class LoginViewController: UIViewController {
         else //logs in
         {
             self.actInd.startAnimating()
+//            
+//            PFUser.logInWithUsernameInBackground(username!, password: password!, block: {(user, error) -> Void in
+//                
+//                self.actInd.stopAnimating()
+//                
+//                if ((user) != nil){
+//                    
+//                   let alert = UIAlertController(title: "Success", message: "Logged In.", preferredStyle: .Alert)
+//                    let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+//                        //...
+//                    }
+//                    alert.addAction(OKAction)
+//                   // self.presentViewController(alert, animated: true, completion: nil)
+//                    self.performSegueWithIdentifier("testSegue", sender: nil)
+//                   // AppDelegate().showMainScreen()
+// 
+//            }
+//
+//            else
+//            {
+//                var alert = UIAlertController(title: "Error", message: "Please enter valid login parameters.", preferredStyle: .Alert)
+//                let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+//                        //creates the alert view if invalid login parameters are inputted
+//                }
+//                alert.addAction(OKAction)
+//                self.presentViewController(alert, animated: true, completion: nil)
+//                }
+//            })
+//            Alamofire.request(.POST, "https://nsapp.herokuapp.com/login", parameters: ["email":"naoko@gmail.com", "password":"funahashi"], encoding: .JSON ).response { (req, res, data, error) -> Void in
+//                print(res)
+//                let outputString = NSString(data: data!, encoding:NSUTF8StringEncoding)
+//                print(outputString)
+//            }
             
-            PFUser.logInWithUsernameInBackground(username!, password: password!, block: {(user, error) -> Void in
-                
-                self.actInd.stopAnimating()
-                
-                if ((user) != nil){
-                    
-                   var alert = UIAlertController(title: "Success", message: "Logged In.", preferredStyle: .Alert)
+            let url = "https://nsapp.herokuapp.com/login"
+            Alamofire.request(.POST, url, parameters: ["email":usernameTF.text!, "password":passwordTF.text!], encoding: .JSON).responseJSON { (req, res, json) -> Void in
+                let message = JSON(json.value!)["message"]
+                if (message == "login success"){
+                    let alert = UIAlertController(title: "Success", message: "Logged In.", preferredStyle: .Alert)
                     let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
-                        //...
                     }
                     alert.addAction(OKAction)
-                   // self.presentViewController(alert, animated: true, completion: nil)
+                    self.actInd.stopAnimating()
                     self.performSegueWithIdentifier("testSegue", sender: nil)
-                   // AppDelegate().showMainScreen()
- 
-            }
-
-            else
-            {
-                var alert = UIAlertController(title: "Error", message: "Please enter valid login parameters.", preferredStyle: .Alert)
-                let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+                }
+                else if (message == "user not found"){
+                    let alert = UIAlertController(title: "Error", message: "User not found. Enter valid parameters.", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                         //creates the alert view if invalid login parameters are inputted
+                    }
+                    alert.addAction(OKAction)
+                    self.actInd.stopAnimating()
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
-                alert.addAction(OKAction)
-                self.presentViewController(alert, animated: true, completion: nil)
+                else {
+                    let alert = UIAlertController(title: "Error", message: "Credentials are incorrect. Enter correct parameters.", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+                        //creates the alert view if invalid login parameters are inputted
+                    }
+                    alert.addAction(OKAction)
+                    self.actInd.stopAnimating()
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
-            })
+            }
         }
+    }
 }
-   
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //UNUSED CODE FOR TWITTER, GOOGLE AND FB LOGIN
   /*
