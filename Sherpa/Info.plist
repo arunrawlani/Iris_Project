@@ -41,6 +41,11 @@
 	<string>dollarTree</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To show where you and your friends planted trees.</string>
 	<key>UILaunchStoryboardName</key>

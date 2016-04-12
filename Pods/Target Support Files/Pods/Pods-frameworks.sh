@@ -53,6 +53,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/AKPickerView_Swift.framework'
+  install_framework 'Pods/Alamofire.framework'
   install_framework 'Pods/Bolts.framework'
   install_framework 'Pods/Bond.framework'
   install_framework 'Pods/DatePickerCell.framework'
@@ -61,9 +62,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Parse.framework'
   install_framework 'Pods/ParseFacebookUtilsV4.framework'
   install_framework 'Pods/ParseUI.framework'
+  install_framework 'Pods/SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/AKPickerView_Swift.framework'
+  install_framework 'Pods/Alamofire.framework'
   install_framework 'Pods/Bolts.framework'
   install_framework 'Pods/Bond.framework'
   install_framework 'Pods/DatePickerCell.framework'
@@ -72,4 +75,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Parse.framework'
   install_framework 'Pods/ParseFacebookUtilsV4.framework'
   install_framework 'Pods/ParseUI.framework'
+  install_framework 'Pods/SwiftyJSON.framework'
 fi

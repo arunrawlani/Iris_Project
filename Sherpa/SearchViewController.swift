@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class SearchViewController: UIViewController, UISearchBarDelegate{
+class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource{
     
+
+    @IBOutlet weak var recentSearchesTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
      var searchActive : Bool = false
+    let recentSearches: [String] = ["Andi is a cocksucker", "Andi is a chutiya", "Andi sucks Abdullah"];
     
     //ADDING THE DELAY FUNCTION USED IN SWIFT SPINNER
     //ADDING SWIFT SPINNER
@@ -53,9 +58,20 @@ class SearchViewController: UIViewController, UISearchBarDelegate{
     //END OF SWIFT SPINNER
     
     override func viewDidLoad() {
+        
+        Alamofire.request(.POST, "https://nsapp.herokuapp.com/login", parameters: ["email":"naoko@gmail.com", "password":"funahashi"], encoding: .JSON).response { (req, res, data, error) -> Void in
+            print(res)
+            let outputString = NSString(data: data!, encoding:NSUTF8StringEncoding)
+            print(outputString)
+        }
+        
+        
         searchBar.delegate = self;
+        
+        //Sets a gesture recognizer to dimiss keyboard when screen is clicked
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
     }
     
     
@@ -93,6 +109,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    //TABLEVIEW PROTOCOL METHODS
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recentSearches.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath) as! RecentSearchCell
+        let strTitle : NSString = recentSearches[indexPath.row] as NSString
+        cell.titleLabel.text = strTitle as String;
+        cell.backgroundColor = UIColor.clearColor()
+        return cell
+    }
     
 }

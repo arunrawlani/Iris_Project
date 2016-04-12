@@ -1,5 +1,6 @@
 PODS:
   - AKPickerView-Swift (1.0.1)
+  - Alamofire (2.0.2)
   - Bolts (1.2.0):
     - Bolts/AppLinks (= 1.2.0)
     - Bolts/Tasks (= 1.2.0)
@@ -30,9 +31,11 @@ PODS:
     - Bolts/Tasks (~> 1.2)
     - Parse (~> 1.8)
   - SinchRTC (3.5.2)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - AKPickerView-Swift
+  - Alamofire (~> 2.0.2)
   - Bond
   - DatePickerCell
   - FBSDKCoreKit
@@ -41,9 +44,11 @@ DEPENDENCIES:
   - ParseFacebookUtilsV4
   - ParseUI
   - SinchRTC
+  - SwiftyJSON (~> 2.3.0)
 
 SPEC CHECKSUMS:
   AKPickerView-Swift: 8509d472bb257649383c276506334a7373d3cb33
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   Bond: c873dba04a09dde9e422242420979aa8e4c9e133
   DatePickerCell: b2abd1f6ba08f01da11baee73a503d6dc33f3118
@@ -53,5 +58,6 @@ SPEC CHECKSUMS:
   ParseFacebookUtilsV4: 2c54f1c9756f4827417984f42b64bc38571d626b
   ParseUI: 2c53621ed028ee793f5ab92a551b099689265525
   SinchRTC: b5de8c84210666db5cbac256ff77953905364175
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.38.0
