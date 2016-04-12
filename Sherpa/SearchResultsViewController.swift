@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Alamofire
 import SwiftyJSON
 
@@ -16,7 +17,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     var searchURL: String?
     var searchJSON: JSON = []
     var arrDict :NSMutableArray=[]
-    @IBOutlet var tableview: UITableView!
+    @IBOutlet weak var tableview: UITableView!
     
     //ADDING THE DELAY FUNCTION USED IN SWIFT SPINNER
     //ADDING SWIFT SPINNER
@@ -75,7 +76,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
             //jsonParsingFromURL()
         }
         // Do any additional setup after loading the view, typically from a nib.
-        tableview.allowsSelection = false
+        tableview.allowsMultipleSelection = true
         tableview.reloadData();
 
     }
@@ -118,11 +119,15 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 110.0
+        if let selectedIndexPaths = tableView.indexPathsForSelectedRows where selectedIndexPaths.contains(indexPath) {
+            return 220.0 // Expanded height
+        }
+        
+        return 78.0 // Normal height
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 5
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,6 +145,21 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
         cell.viewLabel.text = strViews as String
         
         return cell;
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.9)
+        updateTableView()
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        updateTableView()
+    }
+    
+   private func updateTableView() {
+        tableview.beginUpdates()
+        tableview.endUpdates()
     }
     
 }
