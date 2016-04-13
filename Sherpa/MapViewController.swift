@@ -14,14 +14,28 @@ class MapViewController: UIViewController {
     
     var artworks = [Artwork]() //loads the art work from the Artwork.swift file to visualize on the map
     var mapJSON: JSON = []
-    let url = "https://nsapp.herokuapp.com/search?keyword=iphone"
+    let url = "https://nsapp.herokuapp.com/articles"
     
     
     override func viewDidLoad() { //Implements the viewDidLoad for basic view setup
         /*Getting mapJSON from Database */
         Alamofire.request(.GET, self.url, encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.mapJSON = JSON(json.value!)
-            print(self.mapJSON)
+            for (key, subJson):(String,JSON) in self.mapJSON{
+                
+                let lat = subJson["coords","lat"].doubleValue
+                let long = subJson["coords","long"].doubleValue
+                
+                let pinAnnotation = MKPointAnnotation()
+                pinAnnotation.coordinate = CLLocationCoordinate2DMake(Double(lat), Double(long))
+                pinAnnotation.title = subJson["title"].string!
+                let viewString = "Views: "+String(subJson["view_count"].int!)
+                pinAnnotation.subtitle = viewString
+                
+                self.mapView.addAnnotation(pinAnnotation)
+                
+            }
+            
         }
         
         super.viewDidLoad()
@@ -54,20 +68,20 @@ class MapViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        for (key, subJson):(String,JSON) in mapJSON{
-            
-            let lat = subJson["coords","lat"].doubleValue
-            let long = subJson["coords","long"].doubleValue
-            
-            let pinAnnotation = MKPointAnnotation()
-            pinAnnotation.coordinate = CLLocationCoordinate2DMake(Double(lat), Double(long))
-            pinAnnotation.title = subJson["title"].string!
-            let viewString = "Views: "+String(subJson["view_count"].int!)
-            pinAnnotation.subtitle = viewString
-            
-            self.mapView.addAnnotation(pinAnnotation)
-            
-        }
+//        for (key, subJson):(String,JSON) in mapJSON{
+//            
+//            let lat = subJson["coords","lat"].doubleValue
+//            let long = subJson["coords","long"].doubleValue
+//            
+//            let pinAnnotation = MKPointAnnotation()
+//            pinAnnotation.coordinate = CLLocationCoordinate2DMake(Double(lat), Double(long))
+//            pinAnnotation.title = subJson["title"].string!
+//            let viewString = "Views: "+String(subJson["view_count"].int!)
+//            pinAnnotation.subtitle = viewString
+//            
+//            self.mapView.addAnnotation(pinAnnotation)
+//            
+//        }
     }
     
     override func viewDidAppear(animated: Bool) {// Implements the method to check authorization status
