@@ -63,7 +63,7 @@ class MapViewController: UIViewController {
             let pinAnnotation = MKPointAnnotation()
             pinAnnotation.coordinate = CLLocationCoordinate2DMake(Double(lat), Double(long))
             pinAnnotation.title = subJson["title"].string!
-            let viewString = "Views: "+String(subJson["viewcount"].int)
+            let viewString = "Views: "+String(subJson["view_count"].int!)
             pinAnnotation.subtitle = viewString
             
             self.mapView.addAnnotation(pinAnnotation)

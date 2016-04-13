@@ -5,12 +5,15 @@
 import Foundation
 import UIKit
 import Parse
+import Alamofire
+import SwiftyJSON
 
 
 class SignViewController: UIViewController{
     
     var checkState = 0
-    
+    let registerurl = "https://nsapp.herokuapp.com/register"
+
     @IBOutlet weak var firstNameTF: UITextField!
     
     @IBOutlet weak var lastNameTF: UITextField!
@@ -113,42 +116,72 @@ class SignViewController: UIViewController{
             
             self.actInd.startAnimating()
             
-            let newUser = PFUser()
-            
-            newUser["firstName"] = firstName
-            newUser["lastName"] = lastName
-            newUser.username = username
-            newUser.password = password
-            newUser.email = email
-            newUser["pointsEarned"] = pointsEarned
-            newUser["treesPlanted"] = treesPlanted
-            
-            newUser.signUpInBackgroundWithBlock({ (suceed, error) -> Void in
-                
-                self.actInd.stopAnimating()
-                
-                if ((error) != nil) {
-                    let alert = UIAlertController(title: "Error", message: "Oops! Username \(username) is already taken. Enter a different username.", preferredStyle: .Alert)
-                    let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
-                        //...
-                    }
-                    alert.addAction(OKAction)
-                    
-                    self.presentViewController(alert, animated: true, completion: nil)
-                    
-                }
-                else
-                {
-                    let alert = UIAlertController(title: "Success", message: "Signed Up", preferredStyle: .Alert)
+//            let newUser = PFUser()
+//            
+//            newUser["firstName"] = firstName
+//            newUser["lastName"] = lastName
+//            newUser.username = username
+//            newUser.password = password
+//            newUser.email = email
+//            newUser["pointsEarned"] = pointsEarned
+//            newUser["treesPlanted"] = treesPlanted
+//            
+//            newUser.signUpInBackgroundWithBlock({ (suceed, error) -> Void in
+//                
+//                self.actInd.stopAnimating()
+//                
+//                if ((error) != nil) {
+//                    let alert = UIAlertController(title: "Error", message: "Oops! Username \(username) is already taken. Enter a different username.", preferredStyle: .Alert)
+//                    let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+//                        //...
+//                    }
+//                    alert.addAction(OKAction)
+//                    
+//                    self.presentViewController(alert, animated: true, completion: nil)
+//                    
+//                }
+//                else
+//                {
+//                    let alert = UIAlertController(title: "Success", message: "Signed Up", preferredStyle: .Alert)
+//                    let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+//                        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+//                    }
+//                    alert.addAction(OKAction)
+//                    
+//                    self.presentViewController(alert, animated: true, completion: nil)
+//                    
+//                }
+//            })
+            Alamofire.request(.POST, registerurl, parameters: ["username":usernameTF.text!, "email":emailTF.text!, "password":passwordTF.text!], encoding: .JSON).responseJSON { (req, res, json) -> Void in
+                let message = JSON(json.value!)["message"]
+                if (message == "registration success"){
+                    let alert = UIAlertController(title: "Success", message: "Successfully Signed Up!", preferredStyle: .Alert)
                     let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
                         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                     }
                     alert.addAction(OKAction)
-                    
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                else if (message == "username already in use"){
+                    let alert = UIAlertController(title: "Error", message: "Username is already taken. Select a new one.", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+                        //creates the alert view if invalid login parameters are inputted
+                    }
+                    alert.addAction(OKAction)
+                    self.actInd.stopAnimating()
                     self.presentViewController(alert, animated: true, completion: nil)
                     
                 }
-            })
+                else{
+                    let alert = UIAlertController(title: "Error", message: "Username is already taken. Select a new one.", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+                        //creates the alert view if invalid login parameters are inputted
+                    }
+                    alert.addAction(OKAction)
+                    self.actInd.stopAnimating()
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            }
         }
     }
 }
