@@ -16,12 +16,14 @@ class ArticleWork: NSObject, MKAnnotation {
     let summary: String
     let url: String
    // let discipline: String?
+    let view_count: String
     let coordinate: CLLocationCoordinate2D
     
-    init(title: String, summary: String, url: String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, summary: String, url: String, view_count:String, coordinate: CLLocationCoordinate2D) {
         self.title = title
         self.summary = summary
        // self.discipline = discipline
+        self.view_count = view_count
         self.url = url
         self.coordinate = coordinate
         
@@ -30,28 +32,32 @@ class ArticleWork: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        return summary
+        return view_count
     }
     
-    class func fromJSON(json: JSON) -> ArticleWork? {
-        // 1
-        var title: String
-        if let titleOrNil = json[16].string {
-            title = titleOrNil
-        } else {
-            title = ""
-        }
-        let summary = json[12].string
-        let url = json[15].string
-        
-        // 2
-        let latitude = Double(json["coords"]["lat"].string!)
-        let longitude = (json[19].string! as NSString).doubleValue
-        let coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude)
-        
-        // 3
-        return ArticleWork(title: title, summary: summary!, url: url!, coordinate: coordinate)
-    }
+    
+    
+    
+    
+//    class func fromJSON(json: JSON) -> ArticleWork? {
+//        // 1
+//        var title: String
+//        if let titleOrNil = json[16].string {
+//            title = titleOrNil
+//        } else {
+//            title = ""
+//        }
+//        let summary = json[12].string
+//        let url = json[15].string
+//        
+//        // 2
+//        let latitude = Double(json["coords","lat"].string!)
+//        let longitude = (json[19].string! as NSString).doubleValue
+//        let coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude)
+//        
+//        // 3
+//        return ArticleWork(title: title, summary: summary!, url: url!, coordinate: coordinate)
+//    }
     
     // pinColor for disciplines: Sculpture, Plaque, Mural, Monument, other
 //    func pinColor() -> MKPinAnnotationColor  {

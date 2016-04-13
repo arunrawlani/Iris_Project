@@ -25,12 +25,12 @@ class MapViewController: UIViewController {
                 
                 let lat = subJson["coords","lat"].doubleValue
                 let long = subJson["coords","long"].doubleValue
+                let summary = subJson["summary"].string!
+                let title = subJson["title"].string!
+                let view_count = "Views: "+String(subJson["view_count"].int!)
+                let url = subJson["link"].string!
                 
-                let pinAnnotation = MKPointAnnotation()
-                pinAnnotation.coordinate = CLLocationCoordinate2DMake(Double(lat), Double(long))
-                pinAnnotation.title = subJson["title"].string!
-                let viewString = "Views: "+String(subJson["view_count"].int!)
-                pinAnnotation.subtitle = viewString
+                let pinAnnotation = ArticleWork(title: title, summary: summary, url: url, view_count: view_count, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
                 
                 self.mapView.addAnnotation(pinAnnotation)
                 
@@ -43,7 +43,7 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let articlework = ArticleWork(title: "King David Kalakaua",
             summary: "This is Spartaaaaaa",
-            url: "Sculpture",
+            url: "Sculpture", view_count: "View: 233",
             coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
         
         mapView.addAnnotation(articlework)
@@ -134,7 +134,7 @@ extension MapViewController: MKMapViewDelegate {
     
     // Uses annotation and creates a view -check.
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? ArticleWork {
+        if annotation.isKindOfClass(ArticleWork) {
             let identifier = "pin"
             var view: MKPinAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
@@ -146,7 +146,7 @@ extension MapViewController: MKMapViewDelegate {
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 view.pinColor = MKPinAnnotationColor.Green
-                view.image = UIImage(named: "expandButton")
+                view.image = UIImage(contentsOfFile: "expandButton")
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
             }
@@ -157,9 +157,13 @@ extension MapViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
-            let location = view.annotation as! Artwork
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            location.mapItem().openInMapsWithLaunchOptions(launchOptions)
+            let capital = view.annotation as! ArticleWork
+            let placeName = capital.title
+            let placeInfo = capital.summary
+            
+            let ac = UIAlertController(title: placeName!, message: placeInfo, preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
     }
 }
 
