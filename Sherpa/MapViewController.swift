@@ -29,8 +29,8 @@ class MapViewController: UIViewController {
                 let title = subJson["title"].string!
                 let view_count = "Views: "+String(subJson["view_count"].int!)
                 let url = subJson["link"].string!
-                
-                let pinAnnotation = ArticleWork(title: title, summary: summary, url: url, view_count: view_count, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
+                let imagName = "expandShadow.png"
+                let pinAnnotation = ArticleWork(title: title, summary: summary, url: url, view_count: view_count, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), imagName: imagName)
                 
                 self.mapView.addAnnotation(pinAnnotation)
                 
@@ -44,7 +44,7 @@ class MapViewController: UIViewController {
         let articlework = ArticleWork(title: "King David Kalakaua",
             summary: "This is Spartaaaaaa",
             url: "Sculpture", view_count: "View: 233",
-            coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
+            coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661), imagName: "expandShadow.png")
         
         mapView.addAnnotation(articlework)
         
@@ -98,35 +98,6 @@ class MapViewController: UIViewController {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-//    func loadInitialData() {
-//        //loads initial data from the hosted json file -check.
-//        let fileName = mapJSON //selects file to get the information
-//        var readError : NSError?
-//        var data: NSData = try! mapJSON!.rawData()
-//        
-//        // Throws an error if JSON object is not as formatted -check.
-//        var error: NSError?
-//        let jsonObject: AnyObject!
-//        do {
-//            jsonObject = try mapJSON?.object
-//        } catch var error1 as NSError {
-//            error = error1
-//            jsonObject = nil
-//        }
-//        
-//        // Parses the JSON object to get it mapped
-//        if let jsonObject = jsonObject as? [String: AnyObject] where error == nil,
-//        
-//            let jsonData = JSONValue.fromObject(jsonObject)?.array {
-//                for artworkJSON in mapJSON {
-//                    if let artworkJSON = artworkJSON
-//                    
-//                        artwork = ArticleWork.fromJSON(artworkJSON) {
-//                            artworks.append(articlework)
-//                    }
-//                }
-//        }
-//    }
     
 }
 
@@ -134,25 +105,31 @@ extension MapViewController: MKMapViewDelegate {
     
     // Uses annotation and creates a view -check.
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation.isKindOfClass(ArticleWork) {
-            let identifier = "pin"
-            var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
-                as? MKPinAnnotationView { // 2
-                    dequeuedView.annotation = annotation
-                    view = dequeuedView
-            } else {
-                // Creates the pin on the map view and makes a detail disclosure pop up. -check.
-                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                view.canShowCallout = true
-                view.pinColor = MKPinAnnotationColor.Green
-                view.image = UIImage(contentsOfFile: "expandButton")
-                view.calloutOffset = CGPoint(x: -5, y: 5)
-                view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
-            }
-            return view
+        
+        let identifier = "MyPin"
+        
+        if !(annotation is ArticleWork) {
+            return nil
         }
-        return nil
+        
+        let detailButton: UIButton = UIButton(type: UIButtonType.DetailDisclosure)
+        
+        // Reuse the annotation if possible
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+        
+        if annotationView == nil
+        {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+            annotationView!.canShowCallout = true
+            annotationView!.image = UIImage(named: "expandShadow.png")
+            annotationView!.rightCalloutAccessoryView = detailButton
+        }
+        else
+        {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
@@ -162,7 +139,7 @@ extension MapViewController: MKMapViewDelegate {
             let placeInfo = capital.summary
             
             let ac = UIAlertController(title: placeName!, message: placeInfo, preferredStyle: .Alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            ac.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
             presentViewController(ac, animated: true, completion: nil)
     }
 }

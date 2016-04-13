@@ -18,15 +18,16 @@ class ArticleWork: NSObject, MKAnnotation {
    // let discipline: String?
     let view_count: String
     let coordinate: CLLocationCoordinate2D
+    let imagName: String!
     
-    init(title: String, summary: String, url: String, view_count:String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, summary: String, url: String, view_count:String, coordinate: CLLocationCoordinate2D, imagName: String!) {
         self.title = title
         self.summary = summary
        // self.discipline = discipline
         self.view_count = view_count
         self.url = url
         self.coordinate = coordinate
-        
+        self.imagName = imagName
         super.init()
         
     }
