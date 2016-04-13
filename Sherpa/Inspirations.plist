@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>Title</key>
-		<string>Trump Wins Primaries</string>
+		<string>Trump Loses Weekend Delegate </string>
 		<key>Speaker</key>
 		<string>Tammy Coron</string>
 		<key>Room</key>
@@ -14,7 +14,7 @@
 		<key>Background</key>
 		<string>Inspiration-01</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.cnn.com/2016/04/03/politics/north-dakota-gop-delegates-donald-trump-ted-cruz-john-kasich/</string>
 	</dict>
 	<dict>
 		<key>Title</key>
@@ -28,7 +28,7 @@
 		<key>Background</key>
 		<string>Inspiration-02</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.cnn.com/2015/11/26/americas/venezuela-opposition-politician-killed/</string>
 	</dict>
 	<dict>
 		<key>Title</key>
@@ -42,11 +42,11 @@
 		<key>Background</key>
 		<string>Inspiration-03</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.fastcompany.com/3058681/inside-bernie-sanders-social-media-machine</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Trudeau Changes The Economy</string>
+		<string>Boko Haram’s Use of Child Abuse</string>
 		<key>Speaker</key>
 		<string>Jake Gundersen</string>
 		<key>Room</key>
@@ -56,11 +56,11 @@
 		<key>Background</key>
 		<string>Inspiration-05</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.theglobeandmail.com/news/world/boko-harams-use-of-child-suicide-bombers-soaring-un-says/article29604710/ </string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Trudeau Calls Out On Modi</string>
+		<string>Yellow fever outbreak kills 21 in Congo</string>
 		<key>Speaker</key>
 		<string>Ellen Shapiro</string>
 		<key>Room</key>
@@ -70,11 +70,11 @@
 		<key>Background</key>
 		<string>Inspiration-06</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.cbc.ca/news/health/who-congo-yellow-fever-1.3531487 </string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Windows Store No Longer Accepts Bitcoin</string>
+		<string>Smoke-filled air in B.C. as fires threaten </string>
 		<key>Speaker</key>
 		<string>Vicki Wenderlich</string>
 		<key>Room</key>
@@ -84,11 +84,11 @@
 		<key>Background</key>
 		<string>Inspiration-07</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.theweathernetwork.com/news/articles/photos-two-fast-moving-fires-force-evacuations-in-bc/55737</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Buzzfeed Unveils New Ad Format</string>
+		<string>Sixth witness disputes police account of killing</string>
 		<key>Speaker</key>
 		<string>Ryan Nystrom</string>
 		<key>Room</key>
@@ -98,11 +98,11 @@
 		<key>Background</key>
 		<string>Inspiration-08</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.theguardian.com/us-news/2016/apr/12/witness-san-francisco-police-shooting-homeless-man-luis-gongora</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Superman VS Batman Anticipation</string>
+		<string>Belgium detains three over Brussels</string>
 		<key>Speaker</key>
 		<string>Brian Moakley</string>
 		<key>Room</key>
@@ -112,11 +112,11 @@
 		<key>Background</key>
 		<string>Inspiration-09</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.theglobeandmail.com/news/world/two-further-suspects-charged-in-brussels-attacks/article29604304/ </string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Spiderman Revealed in Trailer</string>
+		<string>Chatbots and VR in store for F8 conference</string>
 		<key>Speaker</key>
 		<string>Alexis Gallagher</string>
 		<key>Room</key>
@@ -126,11 +126,11 @@
 		<key>Background</key>
 		<string>Inspiration-10</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.ctvnews.ca/sci-tech/chatbots-and-vr-in-store-for-2016-facebook-f8-conference-1.2855536 </string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Business</string>
+		<string>Creator of Fenix makes new RSS reader </string>
 		<key>Speaker</key>
 		<string>Cesare Rocchi</string>
 		<key>Room</key>
@@ -140,11 +140,11 @@
 		<key>Background</key>
 		<string>Inspiration-11</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.androidauthority.com/fenix-creator-quote-rss-reader-feedly-inoreader-685744/ </string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Devsign</string>
+		<string>Canadian Loblaw Plans Expansion</string>
 		<key>Speaker</key>
 		<string>Ricardo Rendon Cepeda</string>
 		<key>Room</key>
@@ -154,11 +154,11 @@
 		<key>Background</key>
 		<string>Inspiration-12</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.wsj.com/articles/canadian-grocer-loblaw-plans-expansion-1460465858 </string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Folklore</string>
+		<string>Trudeau points out at Modi</string>
 		<key>Speaker</key>
 		<string>Marin Todorov</string>
 		<key>Room</key>
@@ -172,7 +172,7 @@
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Math Isn&apos;t Hard</string>
+		<string>Obama optimisitc about America</string>
 		<key>Speaker</key>
 		<string>Matthijs Hollemans</string>
 		<key>Room</key>
@@ -186,7 +186,7 @@
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Cognition</string>
+		<string>Luke Ronchi drops the Cup</string>
 		<key>Speaker</key>
 		<string>Cesare Rocchi</string>
 		<key>Room</key>
@@ -200,7 +200,7 @@
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>NSBrief</string>
+		<string>Mora wins the F1 race</string>
 		<key>Speaker</key>
 		<string>Saul Mora</string>
 		<key>Room</key>

@@ -40,6 +40,7 @@
 		F1678F201CBC5FEA001B6A32 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F1F1CBC5FEA001B6A32 /* SwiftSpinner.swift */; };
 		F1678F221CBC9CBC001B6A32 /* RecentSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F211CBC9CBC001B6A32 /* RecentSearchCell.swift */; };
 		F1678F251CBD0528001B6A32 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F241CBD0528001B6A32 /* Article.swift */; };
+		F1678F271CBDDBBE001B6A32 /* ArticleWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F261CBDDBBE001B6A32 /* ArticleWork.swift */; };
 		F171EF131B757ED6001ADD9B /* FloatingStarReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171EF121B757ED6001ADD9B /* FloatingStarReview.swift */; };
 		F171EF151B757F1F001ADD9B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171EF141B757F1F001ADD9B /* ReviewViewController.swift */; };
 		F178CEF41B7BC70900B5642D /* PopDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178CEF31B7BC70900B5642D /* PopDatePicker.swift */; };
@@ -133,6 +134,7 @@
 		F1678F1F1CBC5FEA001B6A32 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		F1678F211CBC9CBC001B6A32 /* RecentSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchCell.swift; sourceTree = "<group>"; };
 		F1678F241CBD0528001B6A32 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		F1678F261CBDDBBE001B6A32 /* ArticleWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleWork.swift; sourceTree = "<group>"; };
 		F171EF121B757ED6001ADD9B /* FloatingStarReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingStarReview.swift; sourceTree = "<group>"; };
 		F171EF141B757F1F001ADD9B /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		F178CEF31B7BC70900B5642D /* PopDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopDatePicker.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				F1678F1F1CBC5FEA001B6A32 /* SwiftSpinner.swift */,
 				F109F9131B898D6A00B14050 /* Artwork.swift */,
+				F1678F261CBDDBBE001B6A32 /* ArticleWork.swift */,
 				F1EEC44C1B5EF4FF008A04CF /* BridgeHeader.h */,
 				F1F84D471C9F60D400BAA84E /* Articles.json */,
 				F109F9171B898DF200B14050 /* PublicArt.json */,
@@ -650,6 +653,7 @@
 				E2A3444C1B5B3140004CAF3A /* ToursViewController.swift in Sources */,
 				F1B7AB311B7342120036DEFE /* RequestTableViewCell.swift in Sources */,
 				E2A344401B5B0516004CAF3A /* AppData.swift in Sources */,
+				F1678F271CBDDBBE001B6A32 /* ArticleWork.swift in Sources */,
 				F1F84D421C9D3EFD00BAA84E /* SearchViewController.swift in Sources */,
 				A49B61331B5B9E0D00F81B3D /* CallViewController.swift in Sources */,
 				F1F84D3D1C9687C300BAA84E /* Session.swift in Sources */,

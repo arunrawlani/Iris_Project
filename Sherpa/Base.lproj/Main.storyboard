@@ -117,17 +117,31 @@
                                     <outlet property="delegate" destination="WHD-8C-EcW" id="gpm-3a-nhc"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="topSearches" translatesAutoresizingMaskIntoConstraints="NO" id="eJH-e2-7mA">
+                                <rect key="frame" x="0.0" y="351" width="600" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Top Searches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2W-hQ-7BC">
+                                <rect key="frame" x="20" y="305" width="120.5" height="22"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4fs-JA-Q6l" secondAttribute="trailing" id="2ff-Ah-heF"/>
                             <constraint firstItem="Jrh-Sr-j06" firstAttribute="top" secondItem="QCB-pK-66q" secondAttribute="bottom" id="78Y-oF-UFi"/>
+                            <constraint firstItem="c2W-hQ-7BC" firstAttribute="leading" secondItem="Sdt-L3-Pib" secondAttribute="leading" id="8Ea-AF-ThC"/>
                             <constraint firstItem="oXl-LU-VbJ" firstAttribute="top" secondItem="4fs-JA-Q6l" secondAttribute="bottom" constant="47" id="AfT-Mz-4By"/>
+                            <constraint firstItem="eJH-e2-7mA" firstAttribute="leading" secondItem="RgU-4y-hfU" secondAttribute="leading" id="Ezb-9i-Sb0"/>
                             <constraint firstItem="4fs-JA-Q6l" firstAttribute="leading" secondItem="RgU-4y-hfU" secondAttribute="leading" id="Fyg-Af-rJ9"/>
                             <constraint firstItem="oXl-LU-VbJ" firstAttribute="leading" secondItem="Sdt-L3-Pib" secondAttribute="leading" id="GbI-vi-8DX"/>
+                            <constraint firstItem="JJe-Fz-Zam" firstAttribute="top" secondItem="eJH-e2-7mA" secondAttribute="bottom" constant="8" id="Gr8-x5-1Ac"/>
+                            <constraint firstItem="eJH-e2-7mA" firstAttribute="top" secondItem="c2W-hQ-7BC" secondAttribute="bottom" constant="24" id="Jc8-GA-c7b"/>
                             <constraint firstItem="Jrh-Sr-j06" firstAttribute="leading" secondItem="RgU-4y-hfU" secondAttribute="leading" id="MWp-e3-tTN"/>
                             <constraint firstItem="oXl-LU-VbJ" firstAttribute="leading" secondItem="RgU-4y-hfU" secondAttribute="leading" constant="20" id="PXA-e7-rmV"/>
                             <constraint firstAttribute="trailing" secondItem="Jrh-Sr-j06" secondAttribute="trailing" id="QmE-Zu-6AI"/>
+                            <constraint firstAttribute="trailing" secondItem="eJH-e2-7mA" secondAttribute="trailing" id="VJh-gm-VjZ"/>
                             <constraint firstItem="oXl-LU-VbJ" firstAttribute="top" secondItem="Sdt-L3-Pib" secondAttribute="bottom" constant="8" id="YZ8-mR-1zA"/>
                             <constraint firstAttribute="trailing" secondItem="oXl-LU-VbJ" secondAttribute="trailing" constant="20" id="ZyT-f5-J0g"/>
                             <constraint firstItem="JJe-Fz-Zam" firstAttribute="top" secondItem="Jrh-Sr-j06" secondAttribute="bottom" id="bst-GM-Ipd"/>
@@ -1746,5 +1760,6 @@
         <image name="expandButton" width="40" height="40"/>
         <image name="irisLogo" width="110" height="110"/>
         <image name="irisNameLogo" width="122" height="50"/>
+        <image name="topSearches" width="376" height="112"/>
     </resources>
 </document>

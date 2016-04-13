@@ -18,7 +18,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     var searchActive : Bool = false
     var searchURL: String = ""
     var searchJSON: JSON = []
-    let recentSearches: [String] = ["Andi is a cocksucker", "Andi is a chutiya", "Andi sucks Abdullah"];
+    let recentSearches: [String] = ["Cool361 Project", "Megan Fox", "Vybihal is best professor"];
     let url = "https://nsapp.herokuapp.com/search?keyword="
     
     override func viewDidLoad() {
