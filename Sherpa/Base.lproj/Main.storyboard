@@ -118,7 +118,7 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="topSearches" translatesAutoresizingMaskIntoConstraints="NO" id="eJH-e2-7mA">
-                                <rect key="frame" x="0.0" y="351" width="600" height="128"/>
+                                <rect key="frame" x="0.0" y="350" width="600" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Top Searches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2W-hQ-7BC">
                                 <rect key="frame" x="20" y="305" width="120.5" height="22"/>

@@ -11,6 +11,7 @@ import SwiftyJSON
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    
     var artworks = [Artwork]() //loads the art work from the Artwork.swift file to visualize on the map
     var mapJSON: JSON = []
     let url = "https://nsapp.herokuapp.com/search?keyword=iphone"
@@ -55,8 +56,6 @@ class MapViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         for (key, subJson):(String,JSON) in mapJSON{
             
-            print(subJson["summary"].string!)
-            print(subJson["coords","lat"])
             let lat = subJson["coords","lat"].doubleValue
             let long = subJson["coords","long"].doubleValue
             
@@ -81,7 +80,7 @@ class MapViewController: UIViewController {
     
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-            regionRadius * 30.0, regionRadius * 30.0)
+            regionRadius * 50.0, regionRadius * 50.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -132,10 +131,10 @@ extension MapViewController: MKMapViewDelegate {
                 // Creates the pin on the map view and makes a detail disclosure pop up. -check.
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
-                //view.pinColor = annotation.pinColor()
+                view.pinColor = MKPinAnnotationColor.Green
                 view.image = UIImage(named: "expandButton")
                 view.calloutOffset = CGPoint(x: -5, y: 5)
-                // view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+                view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
             }
             return view
         }
