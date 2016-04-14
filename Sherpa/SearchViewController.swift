@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     var searchURL: String = ""
     var searchJSON: JSON = []
     let recentSearches: [String] = ["Cool361 Project", "Megan Fox", "Vybihal is best professor"];
-    let url = "https://nsapp.herokuapp.com/search?keyword="
+    let url = "https://nsapp.herokuapp.com/search?q="
     
     override func viewDidLoad() {
         
@@ -59,8 +59,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         self.searchURL = url + searchBar.text!.lowercaseString
         Alamofire.request(.GET, self.searchURL, encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.searchJSON = JSON(json.value!)
-            //print(self.searchJSON)
-            print("Here")
         }
         performSegueWithIdentifier("searchResults", sender: self)
     }

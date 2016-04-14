@@ -396,7 +396,9 @@
                             <constraint firstItem="31g-jT-z8j" firstAttribute="top" secondItem="SGW-SY-KYF" secondAttribute="bottom" id="sp6-tX-51j"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Interactive Map" id="4uA-jL-Tse"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="SGW-SY-KYF" id="DSZ-Q7-oAF"/>
                     </connections>
