@@ -72,7 +72,7 @@ class MapViewController: UIViewController {
         
         let button4   = UIButton(type: UIButtonType.Custom) as UIButton
         button4.frame = CGRectMake(100, 100, 100, 50)
-        button4.addTarget(self, action: "politicsAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        button4.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         button4.backgroundColor = UIColor.clearColor()
         button4.center = CGPointMake(40.0, 590.0);// for bottomright
         button4.setImage((UIImage (named: "generalIcon.png")), forState: .Normal)
@@ -117,7 +117,7 @@ class MapViewController: UIViewController {
         let annotationsToRemove = self.mapView.annotations
         self.mapView.removeAnnotations( annotationsToRemove )
         
-        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=spacex+iss", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=brussels", encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.mapJSON = JSON(json.value!)
             for (key, subJson):(String,JSON) in self.mapJSON{
                 
@@ -145,7 +145,7 @@ class MapViewController: UIViewController {
         let annotationsToRemove = self.mapView.annotations
         self.mapView.removeAnnotations( annotationsToRemove )
         
-        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=facebook+buried", encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.mapJSON = JSON(json.value!)
             for (key, subJson):(String,JSON) in self.mapJSON{
                 
@@ -173,7 +173,7 @@ class MapViewController: UIViewController {
         let annotationsToRemove = self.mapView.annotations
         self.mapView.removeAnnotations( annotationsToRemove )
         
-        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=chinese+embryos", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=artificial+intelligence", encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.mapJSON = JSON(json.value!)
             for (key, subJson):(String,JSON) in self.mapJSON{
                 
