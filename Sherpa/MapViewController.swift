@@ -40,13 +40,13 @@ class MapViewController: UIViewController {
         
         super.viewDidLoad()
         mapView.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
-        let articlework = ArticleWork(title: "King David Kalakaua",
-            summary: "This is Spartaaaaaa",
-            url: "Sculpture", view_count: "View: 233",
-            coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661), imagName: "expandShadow.png")
-        
-        mapView.addAnnotation(articlework)
+//        // Do any additional setup after loading the view, typically from a nib.
+//        let articlework = ArticleWork(title: "King David Kalakaua",
+//            summary: "This is Spartaaaaaa",
+//            url: "Sculpture", view_count: "View: 233",
+//            coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661), imagName: "expandShadow.png")
+//        
+//        mapView.addAnnotation(articlework)
         
         // set initial location in Montreal
         let initialLocation = CLLocation(latitude: 45.5087, longitude: -73.554)
@@ -113,7 +113,7 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         let detailButton: UIButton = UIButton(type: UIButtonType.DetailDisclosure)
-        
+
         // Reuse the annotation if possible
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
         
@@ -128,8 +128,27 @@ extension MapViewController: MKMapViewDelegate {
         {
             annotationView!.annotation = annotation
         }
-        
+        self.addBounceAnimationToView(annotationView!)
         return annotationView
+    }
+
+    
+    //To add animation BOUNCE
+    func addBounceAnimationToView(view: UIView)
+    {
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale") as CAKeyframeAnimation
+        bounceAnimation.values = [ 0.03, 1.6, 0.7, 1.2, 1]
+        bounceAnimation.duration = 2.5
+        
+        let timingFunctions = NSMutableArray(capacity: bounceAnimation.values!.count)
+        
+        for var i = 0; i < bounceAnimation.values!.count; i++ {
+            timingFunctions.addObject(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        }
+        bounceAnimation.timingFunctions = timingFunctions as NSArray as? [CAMediaTimingFunction]
+        bounceAnimation.removedOnCompletion = false
+        
+        view.layer.addAnimation(bounceAnimation, forKey: "bounce")
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
@@ -162,6 +181,19 @@ extension MapViewController: MKMapViewDelegate {
             ac.setValue(messageText, forKey: "attributedMessage")
             ac.addAction(UIAlertAction(title: "Dismiss", style: .Destructive, handler: nil))
             presentViewController(ac, animated: true, completion: nil)
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let polyline = overlay as? MKPolyline else {
+            return MKOverlayRenderer()
+        }
+        
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        renderer.lineWidth = 3.0
+        renderer.alpha = 0.5
+        renderer.strokeColor = UIColor.blueColor()
+        
+        return renderer
     }
 }
 
