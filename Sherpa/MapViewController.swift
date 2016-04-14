@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     
     var artworks = [Artwork]() //loads the art work from the Artwork.swift file to visualize on the map
     var mapJSON: JSON = []
-    let url = "https://nsapp.herokuapp.com/articles"
+    let url = "https://nsapp.herokuapp.com/search?keyword=123456789"
     
     
     override func viewDidLoad() { //Implements the viewDidLoad for basic view setup
@@ -134,12 +134,33 @@ extension MapViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView,
         calloutAccessoryControlTapped control: UIControl) {
-            let capital = view.annotation as! ArticleWork
-            let placeName = capital.title
-            let placeInfo = capital.summary
+            let pin = view.annotation as! ArticleWork
+            let placeName = pin.title
+            let placeInfo = pin.summary
+            let placeurl = pin.url
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = NSTextAlignment.Left
+            
+            let messageText = NSMutableAttributedString(
+                string: placeInfo,
+                attributes: [
+                    NSParagraphStyleAttributeName: paragraphStyle,
+                    NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1),
+                    NSForegroundColorAttributeName : UIColor.blackColor()
+                ]
+            )
             
             let ac = UIAlertController(title: placeName!, message: placeInfo, preferredStyle: .Alert)
-            ac.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
+            let cancelAction = UIAlertAction(title: "Go to Article", style: .Cancel) { (action) in
+                let urlstored = NSURL (string: placeurl);
+                if UIApplication.sharedApplication().canOpenURL(urlstored!) {
+                    UIApplication.sharedApplication().openURL(urlstored!)
+                }
+            }
+            ac.addAction(cancelAction)
+            ac.setValue(messageText, forKey: "attributedMessage")
+            ac.addAction(UIAlertAction(title: "Dismiss", style: .Destructive, handler: nil))
             presentViewController(ac, animated: true, completion: nil)
     }
 }

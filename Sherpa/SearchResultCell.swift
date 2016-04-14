@@ -19,7 +19,6 @@ class SearchResultCell: UITableViewCell{
     var link: String!
     
     @IBAction func expandArticle(sender: AnyObject) {
-        print("expandclicked");
         let urlstored = NSURL (string: link);
         print(urlstored)
             if UIApplication.sharedApplication().canOpenURL(urlstored!) {
