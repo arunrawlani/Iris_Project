@@ -52,29 +52,29 @@ class MapViewController: UIViewController {
         centerMapOnLocation(initialLocation)
         
         let button   = UIButton(type: UIButtonType.Custom) as UIButton
-        button.frame = CGRectMake(100, 100, 100, 50)
+        button.frame = CGRectMake(100, 100, 150, 50)
         button.addTarget(self, action: "politicsAction:", forControlEvents: UIControlEvents.TouchUpInside)
         button.backgroundColor = UIColor.clearColor()
-        button.center = CGPointMake(140.0, 590.0);// for bottomright
+        button.center = CGPointMake(140.0, 580.0);// for bottomright
         button.setImage((UIImage (named: "politicsIcon.png")), forState: .Normal)
         
         let button2   = UIButton(type: UIButtonType.Custom) as UIButton
         button2.frame = CGRectMake(100, 100, 100, 50)
         button2.addTarget(self, action: "scienceAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        button2.center = CGPointMake(240.0, 590.0);// for bottomright
+        button2.center = CGPointMake(250.0, 580.0);// for bottomright
         button2.setImage((UIImage (named: "scienceIcon.png")), forState: .Normal)
         
         let button3   = UIButton(type: UIButtonType.Custom) as UIButton
         button3.frame = CGRectMake(100, 100, 100, 50)
         button3.addTarget(self, action: "entertainmentAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        button3.center = CGPointMake(340.0, 590.0);// for bottomright
+        button3.center = CGPointMake(340.0, 580.0);// for bottomright
         button3.setImage((UIImage (named: "entertainmentIcon.png")), forState: .Normal)
         
         let button4   = UIButton(type: UIButtonType.Custom) as UIButton
         button4.frame = CGRectMake(100, 100, 100, 50)
         button4.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         button4.backgroundColor = UIColor.clearColor()
-        button4.center = CGPointMake(40.0, 590.0);// for bottomright
+        button4.center = CGPointMake(40.0, 580.0);// for bottomright
         button4.setImage((UIImage (named: "generalIcon.png")), forState: .Normal)
         
         self.view.addSubview(button)
