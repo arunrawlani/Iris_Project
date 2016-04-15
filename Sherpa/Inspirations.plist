@@ -10,11 +10,25 @@
 		<key>Room</key>
 		<string>Metropolitan Center</string>
 		<key>Time</key>
-		<string>Feb 6, 5:45</string>
+		<string>Apr 14, 5:45</string>
 		<key>Background</key>
 		<string>Inspiration-10</string>
 		<key>Website</key>
 		<string>http://www.ctvnews.ca/sci-tech/chatbots-and-vr-in-store-for-2016-facebook-f8-conference-1.2855536</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Belgium detains three over Brussels</string>
+		<key>Speaker</key>
+		<string>Brian Moakley</string>
+		<key>Room</key>
+		<string>The Grid</string>
+		<key>Time</key>
+		<string>Apr 15, 5:45</string>
+		<key>Background</key>
+		<string>Inspiration-09</string>
+		<key>Website</key>
+		<string>http://www.theglobeandmail.com/news/world/two-further-suspects-charged-in-brussels-attacks/article29604304/</string>
 	</dict>
 	<dict>
 		<key>Title</key>
@@ -24,7 +38,7 @@
 		<key>Room</key>
 		<string>The Hill</string>
 		<key>Time</key>
-		<string>7476 Views</string>
+		<string>Apr 13, 3:35</string>
 		<key>Background</key>
 		<string>Inspiration-05</string>
 		<key>Website</key>
@@ -38,7 +52,7 @@
 		<key>Room</key>
 		<string>The Grid</string>
 		<key>Time</key>
-		<string>848 Views</string>
+		<string>Apr 13, 1:28</string>
 		<key>Background</key>
 		<string>Inspiration-06</string>
 		<key>Website</key>
@@ -52,7 +66,7 @@
 		<key>Room</key>
 		<string>Metropolitan Center</string>
 		<key>Time</key>
-		<string>8382 Views</string>
+		<string>Apr 14, 8:32</string>
 		<key>Background</key>
 		<string>Inspiration-03</string>
 		<key>Website</key>
@@ -66,7 +80,7 @@
 		<key>Room</key>
 		<string>The Grid</string>
 		<key>Time</key>
-		<string>1234 Views</string>
+		<string>Apr 14, 5:45</string>
 		<key>Background</key>
 		<string>Inspiration-02</string>
 		<key>Website</key>
@@ -80,7 +94,7 @@
 		<key>Room</key>
 		<string>The Hill</string>
 		<key>Time</key>
-		<string>1334 Views</string>
+		<string>Apr 12, 6:48</string>
 		<key>Background</key>
 		<string>Inspiration-01</string>
 		<key>Website</key>
@@ -94,7 +108,7 @@
 		<key>Room</key>
 		<string>Metropolitan Center</string>
 		<key>Time</key>
-		<string>789 Views</string>
+		<string>Apr 14, 6:48</string>
 		<key>Background</key>
 		<string>Inspiration-07</string>
 		<key>Website</key>
@@ -113,20 +127,6 @@
 		<string>Inspiration-08</string>
 		<key>Website</key>
 		<string>http://www.theguardian.com/us-news/2016/apr/12/witness-san-francisco-police-shooting-homeless-man-luis-gongora</string>
-	</dict>
-	<dict>
-		<key>Title</key>
-		<string>Belgium detains three over Brussels</string>
-		<key>Speaker</key>
-		<string>Brian Moakley</string>
-		<key>Room</key>
-		<string>The Grid</string>
-		<key>Time</key>
-		<string>Feb 6, 5:45</string>
-		<key>Background</key>
-		<string>Inspiration-09</string>
-		<key>Website</key>
-		<string>http://www.theglobeandmail.com/news/world/two-further-suspects-charged-in-brussels-attacks/article29604304/</string>
 	</dict>
 	<dict>
 		<key>Title</key>
