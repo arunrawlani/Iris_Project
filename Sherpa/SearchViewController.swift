@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource{
+class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate{
     
 
     @IBOutlet weak var recentSearchesTable: UITableView!
@@ -18,31 +18,40 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     var searchActive : Bool = false
     var searchURL: String = ""
     var searchJSON: JSON = []
-    var recentSearches: [String] = ["Cool361 Project", "Megan Fox", "Vybihal is best professor"];
+    var recentSearches: [String] = []
     let url = "https://nsapp.herokuapp.com/search?q="
     var i = 0
+   
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
         searchBar.delegate = self;
-        
+        recentSearchesTable.delegate = self
         //Sets a gesture recognizer to dimiss keyboard when screen is clicked
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+       // let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+       // view.addGestureRecognizer(tap)
         
-//        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search_history", encoding: .JSON).responseJSON { (req, res, json) -> Void in
-//            let recentJSON = JSON(json.value!)
-//            self.recentSearches = []
-//            for (key, subJson):(String,JSON) in recentJSON{
-//                let search = subJson["search_history"]
-//                var searchString = ""
-//                for (key, subJson): (String, JSON) in search{
-//                    print(search)
-//                    searchString = searchString + " " + subJson.string!
-//                }
-//                self.recentSearches.append(searchString)
-//            }
-//        }
-//        self.recentSearchesTable.reloadData()
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search_history", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+            let recentJSON = JSON(json.value!)
+            self.recentSearches.removeAll()
+            for nudge in recentJSON["search_history"].array! {
+                self.recentSearches.append(nudge.string!)
+                }
+        self.recentSearches = self.recentSearches.reverse()
+        self.recentSearchesTable.reloadData()
+        }
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search_history", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+            let recentJSON = JSON(json.value!)
+            self.recentSearches.removeAll()
+            for nudge in recentJSON["search_history"].array! {
+                self.recentSearches.append(nudge.string!)
+            }
+            self.recentSearches = self.recentSearches.reverse()
+            self.recentSearchesTable.reloadData()
+        }
     }
     
 
@@ -77,9 +86,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
             })
         print(processedString)
         self.searchURL = url + processedString
-        Alamofire.request(.GET, self.searchURL, encoding: .JSON).responseJSON { (req, res, json) -> Void in
-            self.searchJSON = JSON(json.value!)
-        }
+//        Alamofire.request(.GET, self.searchURL, encoding: .JSON).responseJSON { (req, res, json) -> Void in
+//            self.searchJSON = JSON(json.value!)
+//        }
         performSegueWithIdentifier("searchResults", sender: self)
     }
     
@@ -112,5 +121,34 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow!
+        
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as! RecentSearchCell
+        if let searchString = currentCell.titleLabel.text{
+            let lowerSearchString = searchString.lowercaseString
+            let processedString = String(lowerSearchString.characters.map {
+                $0 == " " ? "+" : $0
+                })
+            print(processedString)
+            self.searchURL = url + processedString
+            Alamofire.request(.GET, self.searchURL, encoding: .JSON).responseJSON { (req, res, json) -> Void in
+                self.searchJSON = JSON(json.value!)
+            }
+            performSegueWithIdentifier("searchResults", sender: self)
+        }
+        else{
+            print("String is nill")
+        }
+    }
+   
+    
+    //MAKES SURE THAT THE TABLE VIEW IS NOT HIDDEN BY BY THE GESTURE RECOGNIZER
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if touch.view!.isDescendantOfView(self.recentSearchesTable){
+            return false
+        }
+        return true
+    }
     
 }

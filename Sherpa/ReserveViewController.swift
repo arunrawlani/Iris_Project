@@ -59,12 +59,16 @@ class ReserveViewController: UIViewController{
         let articleImageLink = NSURL(string: self.imaglink as String)
         articlePicture.contentMode = .ScaleAspectFill
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            let data = NSData(contentsOfURL: articleImageLink!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-            dispatch_async(dispatch_get_main_queue(), {
-                self.self.articlePicture.image = UIImage(data: data!)
-            });
+            if let data = NSData(contentsOfURL: articleImageLink!) {
+                //make sure your image in this url does exist,  otherwise unwrap in a if let check
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.self.articlePicture.image = UIImage(data: data)
+                });
+            }
+            else{
+                print("No image found")
+            }
         }
-       
         
     }
     

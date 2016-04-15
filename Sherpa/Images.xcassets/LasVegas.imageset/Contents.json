@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "africa.png"
+      "filename" : "imageNotFound.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "africa@2x.png"
+      "filename" : "imageNotFound@2x.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "africa@3x.png"
+      "filename" : "imageNotFound@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

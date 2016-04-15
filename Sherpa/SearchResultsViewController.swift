@@ -38,23 +38,21 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
             SwiftSpinner.show("Searching for \n Articles...")
         })
         
-        delay(seconds: 0.1, completion: { //2.0
+        delay(seconds: 1.0, completion: { //2.0
             SwiftSpinner.show("Fetching the \n Articles..")
         })
         
-        delay(seconds: 0.2, completion: { //4.0
+        delay(seconds: 3.0, completion: { //4.0
             SwiftSpinner.show("Extracting the Previews...")
         })
         
-        delay(seconds: 0.3, completion: { //5.5
+        delay(seconds: 4.0, completion: { //5.5
             SwiftSpinner.setTitleFont(nil)
             SwiftSpinner.show("Displaying \nArticles", animated: false)
         })
         
-        delay(seconds: 0.4, completion: { //6.0
+        delay(seconds: 4.5, completion: { //6.0
             SwiftSpinner.hide()
-            print(self.searchJSON)
-            print(self.searchJSON.count)
             self.tableview.reloadData()
         })
         
@@ -64,21 +62,16 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(searchURL)
+        print(searchURL!)
         self.demoSpinner()
         
-        Alamofire.request(.GET, searchURL!, encoding: .JSON).responseJSON { (req, res, json) -> Void in
+        Alamofire.request(.GET, self.searchURL!, encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.searchJSON = JSON(json.value!)
+            self.tableview.reloadData();
         }
         
-        if yourJsonFormat == "JSONFile" {
-            jsonParsingFromFile()
-        } else {
-            //jsonParsingFromURL()
-        }
         // Do any additional setup after loading the view, typically from a nib.
         tableview.allowsMultipleSelection = true
-        tableview.reloadData();
 
     }
     
@@ -162,7 +155,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 5
+        return searchJSON.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
