@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol article {
+    func expandArticle(titleLabel: String, summary: String, view_count: String, imaglink: String)
+}
+
 class SearchResultCell: UITableViewCell{
     
     
@@ -16,14 +20,16 @@ class SearchResultCell: UITableViewCell{
     @IBOutlet var summaryLabel: UILabel!
     @IBOutlet var viewLabel: UILabel!
     @IBOutlet weak var expandButton: UIButton!
+    
     var link: String!
+    var imaglink:String!
+    
+    var delegate: article? = nil
     
     @IBAction func expandArticle(sender: AnyObject) {
-        let urlstored = NSURL (string: link);
-        print(urlstored)
-            if UIApplication.sharedApplication().canOpenURL(urlstored!) {
-                UIApplication.sharedApplication().openURL(urlstored!)
-            }
+        if (delegate != nil) {
+            delegate!.expandArticle(titleLabel.text!, summary: summaryLabel.text!, view_count: viewLabel.text!, imaglink: imaglink)
+        }
     }
     
     

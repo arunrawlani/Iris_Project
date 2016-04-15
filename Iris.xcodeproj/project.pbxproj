@@ -12,7 +12,6 @@
 		659895B01B5B253600607B5E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659895AF1B5B253600607B5E /* Review.swift */; };
 		659895B41B5B989F00607B5E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659895B31B5B989F00607B5E /* LoginViewController.swift */; };
 		659F00451B5ADECE00E4267B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F00441B5ADECE00E4267B /* AppDelegate.swift */; };
-		659F004A1B5ADECE00E4267B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659F00481B5ADECE00E4267B /* Main.storyboard */; };
 		659F004C1B5ADECE00E4267B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659F004B1B5ADECE00E4267B /* Images.xcassets */; };
 		659F004F1B5ADECE00E4267B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659F004D1B5ADECE00E4267B /* LaunchScreen.xib */; };
 		659F005B1B5ADECE00E4267B /* IrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F005A1B5ADECE00E4267B /* IrisTests.swift */; };
@@ -49,6 +48,7 @@
 		F1678F451CC06683001B6A32 /* FBQuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F3E1CC06683001B6A32 /* FBQuadTree.swift */; };
 		F1678F461CC06683001B6A32 /* FBQuadTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F3F1CC06683001B6A32 /* FBQuadTreeNode.swift */; };
 		F1678F481CC06695001B6A32 /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F471CC06695001B6A32 /* StyleKit.swift */; };
+		F1678F491CC0C625001B6A32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659F00481B5ADECE00E4267B /* Main.storyboard */; };
 		F171EF131B757ED6001ADD9B /* FloatingStarReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171EF121B757ED6001ADD9B /* FloatingStarReview.swift */; };
 		F171EF151B757F1F001ADD9B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171EF141B757F1F001ADD9B /* ReviewViewController.swift */; };
 		F178CEF41B7BC70900B5642D /* PopDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178CEF31B7BC70900B5642D /* PopDatePicker.swift */; };
@@ -572,10 +572,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659F004A1B5ADECE00E4267B /* Main.storyboard in Resources */,
 				F109F9181B898DF200B14050 /* PublicArt.json in Resources */,
 				659F004F1B5ADECE00E4267B /* LaunchScreen.xib in Resources */,
 				F1F84D271C9680E300BAA84E /* Inspirations.xcassets in Resources */,
+				F1678F491CC0C625001B6A32 /* Main.storyboard in Resources */,
 				F1F84D481C9F60D400BAA84E /* Articles.json in Resources */,
 				659F004C1B5ADECE00E4267B /* Images.xcassets in Resources */,
 				F178CEF81B7BC77D00B5642D /* PopDateViewController.xib in Resources */,

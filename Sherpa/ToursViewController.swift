@@ -238,23 +238,23 @@ class ToursViewController: UIViewController, UITableViewDelegate , UITableViewDa
     var costLabel: String = ""
     //var tourSum: String? = ""
     
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "goToReserveTour"{
-            let reserveVC: ReserveViewController = segue.destinationViewController as! ReserveViewController
-            reserveVC.tourName = tourName
-            reserveVC.tourCost = costLabel
-            reserveVC.tourSum = self.findTour(reserveVC.tourName).tourDetail!
-            reserveVC.tourLang = self.findTour(reserveVC.tourName).langOffered!
-            reserveVC.tourTimes = self.findTour(reserveVC.tourName).prefTimes!
-            reserveVC.selectedTour = self.findTour(reserveVC.tourName)
-            reserveVC.createdBy = self.findTour(reserveVC.tourName).createdBy
-            reserveVC.reviewsNum = self.findTour(reserveVC.tourName).reviewsNum
-            reserveVC.avgRating = self.findTour(reserveVC.tourName).avgRating
-            reserveVC.mainImage =  UIImage(named: mainGraphicImageFileName)
-        }
-
-        
-    }
+//     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "goToReserveTour"{
+//            let reserveVC: ReserveViewController = segue.destinationViewController as! ReserveViewController
+//            reserveVC.tourName = tourName
+//            reserveVC.tourCost = costLabel
+//            reserveVC.tourSum = self.findTour(reserveVC.tourName).tourDetail!
+//            reserveVC.tourLang = self.findTour(reserveVC.tourName).langOffered!
+//            reserveVC.tourTimes = self.findTour(reserveVC.tourName).prefTimes!
+//            reserveVC.selectedTour = self.findTour(reserveVC.tourName)
+//            reserveVC.createdBy = self.findTour(reserveVC.tourName).createdBy
+//            reserveVC.reviewsNum = self.findTour(reserveVC.tourName).reviewsNum
+//            reserveVC.avgRating = self.findTour(reserveVC.tourName).avgRating
+//            reserveVC.mainImage =  UIImage(named: mainGraphicImageFileName)
+//        }
+//
+//        
+//    }
    /* func goToOverview(tourName: String, imageName: String, costLabel: String){
         self.tourName = tourName
         self.imageName = imageName

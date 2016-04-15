@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SearchResultsViewController: UIViewController, UITableViewDelegate , UITableViewDataSource{
+class SearchResultsViewController: UIViewController, UITableViewDelegate , UITableViewDataSource, article{
     
     let yourJsonFormat: String = "JSONFile" // set text JSONFile : json data from file
     var searchURL: String?
@@ -38,20 +38,20 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
             SwiftSpinner.show("Searching for \n Articles...")
         })
         
-        delay(seconds: 2.0, completion: {
+        delay(seconds: 0.1, completion: { //2.0
             SwiftSpinner.show("Fetching the \n Articles..")
         })
         
-        delay(seconds: 4.0, completion: {
+        delay(seconds: 0.2, completion: { //4.0
             SwiftSpinner.show("Extracting the Previews...")
         })
         
-        delay(seconds: 5.5, completion: {
+        delay(seconds: 0.3, completion: { //5.5
             SwiftSpinner.setTitleFont(nil)
             SwiftSpinner.show("Displaying \nArticles", animated: false)
         })
         
-        delay(seconds: 6.0, completion: {
+        delay(seconds: 0.4, completion: { //6.0
             SwiftSpinner.hide()
             print(self.searchJSON)
             print(self.searchJSON.count)
@@ -86,6 +86,37 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
         super.viewWillAppear(animated)
         tableview.reloadData();
     }
+    
+    
+    var titleLabel: String = ""
+    var summary: String = ""
+    var view_count: String = ""
+    var imaglink: String = ""
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToReserveTour"{
+            let reserveVC: ReserveViewController = segue.destinationViewController as! ReserveViewController
+            reserveVC.tourName = titleLabel
+            print("TITLE: " + titleLabel)
+            print("SUMMARY:" + summary)
+            print("VIEW_COUNT:" + view_count)
+            reserveVC.tourSum = summary
+            reserveVC.tourCost = view_count
+            reserveVC.imaglink = imaglink
+        }
+        
+    }
+    
+    func expandArticle(titleLabel: String, summary: String, view_count: String, imaglink: String) {
+        self.titleLabel = titleLabel
+        self.summary = summary
+        self.view_count = view_count
+        self.imaglink = imaglink
+        performSegueWithIdentifier("goToReserveTour", sender: self)
+    }
+    
+    
+    
     
     //JSON PARSING: From URL
     func jsonParsingFromURL () {
@@ -137,17 +168,23 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SearchResultCell
+        cell.delegate = self
         cell.backgroundColor = UIColor.clearColor()
         let strTitle : NSString=self.searchJSON[indexPath.row]["title"].string!
         let strSummary : NSString=self.searchJSON[indexPath.row]["summary"].string!
-        let strViews: NSString=String(self.searchJSON[indexPath.row]["viewcount"])
+        let strViews: NSString=String(self.searchJSON[indexPath.row]["view_count"])
         let strLink: NSString=self.searchJSON[indexPath.row]["link"].string!
+        
         cell.titleLabel.text = strTitle as String
         cell.summaryLabel.text = strSummary as String
         cell.viewLabel.text = strViews as String
         cell.link = strLink as String
-        
+        cell.imaglink = self.searchJSON[indexPath.row]["image"].string!
         return cell;
+    }
+    
+    func someAction() {
+        self.performSegueWithIdentifier("goToReserveTour", sender: self)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
