@@ -92,6 +92,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
     var summary: String = ""
     var view_count: String = ""
     var imaglink: String = ""
+    var articlelink: String = ""
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToReserveTour"{
@@ -103,15 +104,17 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
             reserveVC.tourSum = summary
             reserveVC.tourCost = view_count
             reserveVC.imaglink = imaglink
+            reserveVC.articlelink = articlelink
         }
         
     }
     
-    func expandArticle(titleLabel: String, summary: String, view_count: String, imaglink: String) {
+    func expandArticle(titleLabel: String, summary: String, view_count: String, imaglink: String, articlelink: String) {
         self.titleLabel = titleLabel
         self.summary = summary
         self.view_count = view_count
         self.imaglink = imaglink
+        self.articlelink = articlelink
         performSegueWithIdentifier("goToReserveTour", sender: self)
     }
     
@@ -178,7 +181,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate , UITab
         cell.titleLabel.text = strTitle as String
         cell.summaryLabel.text = strSummary as String
         cell.viewLabel.text = strViews as String
-        cell.link = strLink as String
+        cell.articlelink = strLink as String
         cell.imaglink = self.searchJSON[indexPath.row]["image"].string!
         return cell;
     }

@@ -14,6 +14,7 @@ class ReserveViewController: UIViewController{
     @IBOutlet weak var reviewNumLabel: UILabel!
     @IBOutlet weak var articlePicture: UIImageView!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var openArticle: UIButton!
     
     @IBOutlet weak var requestButton: UIButton!
     var requestPressedCounter: Int = 1
@@ -25,9 +26,8 @@ class ReserveViewController: UIViewController{
      var tourCost: String = "" //costLabel
      var tourName: String = "" //nameLabel
      var tourSum: String = "" //sumLabel
-     var imaglink: String = ""
-    
-    
+     var imaglink: String = "" //article image link
+     var articlelink: String = "" //article link
     
     
      var tourLang: [String] = [] //pickerView
@@ -100,10 +100,16 @@ class ReserveViewController: UIViewController{
             print("Do nothing")
         }
         
+    @IBAction func openArticleWithButton(sender: AnyObject) {
+        let urlstored = NSURL (string: self.articlelink);
+        if UIApplication.sharedApplication().canOpenURL(urlstored!) {
+            UIApplication.sharedApplication().openURL(urlstored!)
+        }
     }
-    
+    }
 
 
- 
+
+
 
 
