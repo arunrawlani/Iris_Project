@@ -41,6 +41,14 @@
 		F1678F221CBC9CBC001B6A32 /* RecentSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F211CBC9CBC001B6A32 /* RecentSearchCell.swift */; };
 		F1678F251CBD0528001B6A32 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F241CBD0528001B6A32 /* Article.swift */; };
 		F1678F271CBDDBBE001B6A32 /* ArticleWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F261CBDDBBE001B6A32 /* ArticleWork.swift */; };
+		F1678F401CC06683001B6A32 /* FBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F391CC06683001B6A32 /* FBAnnotation.swift */; };
+		F1678F411CC06683001B6A32 /* FBAnnotationCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F3A1CC06683001B6A32 /* FBAnnotationCluster.swift */; };
+		F1678F421CC06683001B6A32 /* FBAnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F3B1CC06683001B6A32 /* FBAnnotationClusterView.swift */; };
+		F1678F431CC06683001B6A32 /* FBBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F3C1CC06683001B6A32 /* FBBoundingBox.swift */; };
+		F1678F441CC06683001B6A32 /* FBClusteringManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F3D1CC06683001B6A32 /* FBClusteringManagerDelegate.swift */; };
+		F1678F451CC06683001B6A32 /* FBQuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F3E1CC06683001B6A32 /* FBQuadTree.swift */; };
+		F1678F461CC06683001B6A32 /* FBQuadTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F3F1CC06683001B6A32 /* FBQuadTreeNode.swift */; };
+		F1678F481CC06695001B6A32 /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1678F471CC06695001B6A32 /* StyleKit.swift */; };
 		F171EF131B757ED6001ADD9B /* FloatingStarReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171EF121B757ED6001ADD9B /* FloatingStarReview.swift */; };
 		F171EF151B757F1F001ADD9B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171EF141B757F1F001ADD9B /* ReviewViewController.swift */; };
 		F178CEF41B7BC70900B5642D /* PopDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178CEF31B7BC70900B5642D /* PopDatePicker.swift */; };
@@ -135,6 +143,14 @@
 		F1678F211CBC9CBC001B6A32 /* RecentSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchCell.swift; sourceTree = "<group>"; };
 		F1678F241CBD0528001B6A32 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		F1678F261CBDDBBE001B6A32 /* ArticleWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleWork.swift; sourceTree = "<group>"; };
+		F1678F391CC06683001B6A32 /* FBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotation.swift; sourceTree = "<group>"; };
+		F1678F3A1CC06683001B6A32 /* FBAnnotationCluster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationCluster.swift; sourceTree = "<group>"; };
+		F1678F3B1CC06683001B6A32 /* FBAnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAnnotationClusterView.swift; sourceTree = "<group>"; };
+		F1678F3C1CC06683001B6A32 /* FBBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBBoundingBox.swift; sourceTree = "<group>"; };
+		F1678F3D1CC06683001B6A32 /* FBClusteringManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBClusteringManagerDelegate.swift; sourceTree = "<group>"; };
+		F1678F3E1CC06683001B6A32 /* FBQuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBQuadTree.swift; sourceTree = "<group>"; };
+		F1678F3F1CC06683001B6A32 /* FBQuadTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBQuadTreeNode.swift; sourceTree = "<group>"; };
+		F1678F471CC06695001B6A32 /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
 		F171EF121B757ED6001ADD9B /* FloatingStarReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingStarReview.swift; sourceTree = "<group>"; };
 		F171EF141B757F1F001ADD9B /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		F178CEF31B7BC70900B5642D /* PopDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopDatePicker.swift; sourceTree = "<group>"; };
@@ -280,6 +296,14 @@
 		659F00421B5ADECE00E4267B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1678F471CC06695001B6A32 /* StyleKit.swift */,
+				F1678F391CC06683001B6A32 /* FBAnnotation.swift */,
+				F1678F3A1CC06683001B6A32 /* FBAnnotationCluster.swift */,
+				F1678F3B1CC06683001B6A32 /* FBAnnotationClusterView.swift */,
+				F1678F3C1CC06683001B6A32 /* FBBoundingBox.swift */,
+				F1678F3D1CC06683001B6A32 /* FBClusteringManagerDelegate.swift */,
+				F1678F3E1CC06683001B6A32 /* FBQuadTree.swift */,
+				F1678F3F1CC06683001B6A32 /* FBQuadTreeNode.swift */,
 				F1678F1F1CBC5FEA001B6A32 /* SwiftSpinner.swift */,
 				F109F9131B898D6A00B14050 /* Artwork.swift */,
 				F1678F261CBDDBBE001B6A32 /* ArticleWork.swift */,
@@ -621,9 +645,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1678F401CC06683001B6A32 /* FBAnnotation.swift in Sources */,
 				659895B41B5B989F00607B5E /* LoginViewController.swift in Sources */,
+				F1678F461CC06683001B6A32 /* FBQuadTreeNode.swift in Sources */,
 				F1F84D341C96872D00BAA84E /* UIColor+Palette.swift in Sources */,
 				F109F9141B898D6A00B14050 /* Artwork.swift in Sources */,
+				F1678F421CC06683001B6A32 /* FBAnnotationClusterView.swift in Sources */,
 				659895AE1B5B249400607B5E /* Tour.swift in Sources */,
 				F171EF151B757F1F001ADD9B /* ReviewViewController.swift in Sources */,
 				659895B01B5B253600607B5E /* Review.swift in Sources */,
@@ -633,6 +660,7 @@
 				F1F84D381C96879B00BAA84E /* UltravisualLayout.swift in Sources */,
 				F1F84D461C9F4E3000BAA84E /* SearchResultCell.swift in Sources */,
 				F1F84D251C96720600BAA84E /* GeneralTrendsViewController.swift in Sources */,
+				F1678F441CC06683001B6A32 /* FBClusteringManagerDelegate.swift in Sources */,
 				F1F84D311C96846600BAA84E /* InspirationsViewController.swift in Sources */,
 				E2A3444E1B5B370F004CAF3A /* ToursTableCell.swift in Sources */,
 				F1F84D3C1C9687C300BAA84E /* Inspiration.swift in Sources */,
@@ -644,6 +672,7 @@
 				F1B7AB2D1B72ABF90036DEFE /* TransitionManager.swift in Sources */,
 				E2A344441B5B0550004CAF3A /* ExploreTableCell.swift in Sources */,
 				E2A344421B5B053C004CAF3A /* TableViewForExplore.swift in Sources */,
+				F1678F481CC06695001B6A32 /* StyleKit.swift in Sources */,
 				F109F9121B898D4100B14050 /* MapViewController.swift in Sources */,
 				F1B7AB2F1B72D9C30036DEFE /* RequestViewController.swift in Sources */,
 				E2A344561B5B8861004CAF3A /* TourOverviewViewController.swift in Sources */,
@@ -658,9 +687,11 @@
 				A49B61331B5B9E0D00F81B3D /* CallViewController.swift in Sources */,
 				F1F84D3D1C9687C300BAA84E /* Session.swift in Sources */,
 				F1F84D401C96886200BAA84E /* InspirationCell.swift in Sources */,
+				F1678F431CC06683001B6A32 /* FBBoundingBox.swift in Sources */,
 				F1F84D351C96872D00BAA84E /* UIImage+Decompression.swift in Sources */,
 				E2A3444A1B5B22E8004CAF3A /* DashboardTableViewCell.swift in Sources */,
 				F109F9241B89CE6F00B14050 /* ActivityViewController.swift in Sources */,
+				F1678F411CC06683001B6A32 /* FBAnnotationCluster.swift in Sources */,
 				F178CEF41B7BC70900B5642D /* PopDatePicker.swift in Sources */,
 				659F00451B5ADECE00E4267B /* AppDelegate.swift in Sources */,
 				F178CEF61B7BC72000B5642D /* PopDateViewController.swift in Sources */,
@@ -669,6 +700,7 @@
 				F1678F251CBD0528001B6A32 /* Article.swift in Sources */,
 				F1F84D441C9E2E2200BAA84E /* SearchResultsViewController.swift in Sources */,
 				F1A628F51B76E87700ABFB8E /* MainViewController.swift in Sources */,
+				F1678F451CC06683001B6A32 /* FBQuadTree.swift in Sources */,
 				F109F9161B898D9000B14050 /* JSON.swift in Sources */,
 				E2A3445A1B5C21CA004CAF3A /* TimelineViewController.swift in Sources */,
 				F1D2835D1B615D1D000E1BD4 /* OptionViewController.swift in Sources */,

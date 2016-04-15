@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FBAnnotationClusteringSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +72,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>091C63C457D4E7A86692F4883958DD54</key>
+		<key>05B3EE258BD803294A6F2747F46537C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14DA441FD303338F4CD6C3FB07CEF7C3</key>
+		<key>070494E6BA58E66B105A22D6A3854D4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0AD2918AD34FE7A6EEC65749C350B58C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0EF3523CD5E4A06D840C80E005402E7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,47 +97,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>407BF55E223A4614E6B9431465F29DE9</key>
+		<key>30FE46B820D2E1D5B5867AC189EB0EA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F77899E494555CAC37B693663AB4DA8</key>
+		<key>35527081E8E3822CF7628C67692813BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>688A822F5225AB479FBEF2EB3A1610BB</key>
+		<key>467EF071907E901A58B5BA90B8BAE00B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>74889F9212A01E1025D62DCB6932929C</key>
+		<key>55EC6124337B5E5BB3195F09DF863E97</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B810AF115E457B63798A16C7165AF7C</key>
+		<key>94DD97C2257D770B598FB42DBA2ACE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2B56ABE1FD637933DAEDEFA5715DD08</key>
+		<key>C5E39800614A7134B8C795F6A3459D7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5067353E08D6C9CC687D696191E59FA</key>
+		<key>D05558600BF02AB6F513810AB1B9EB8D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EBC4C3049D7DCAB7036E2E9C53EC4DD0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F70CA774EA510117BA4C2524E99184A1</key>
+		<key>DCEA05BFC0C240A49DB23EAB99630CDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

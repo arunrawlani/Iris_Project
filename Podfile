@@ -14,4 +14,5 @@ pod 'AKPickerView-Swift'
 pod 'DatePickerCell'
 pod 'Alamofire', '~> 2.0.2'
 pod 'SwiftyJSON', '~> 2.3.0'
+pod 'FBAnnotationClusteringSwift'
 

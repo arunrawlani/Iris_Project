@@ -18,9 +18,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     var searchActive : Bool = false
     var searchURL: String = ""
     var searchJSON: JSON = []
-    let recentSearches: [String] = ["Cool361 Project", "Megan Fox", "Vybihal is best professor"];
+    var recentSearches: [String] = ["Cool361 Project", "Megan Fox", "Vybihal is best professor"];
     let url = "https://nsapp.herokuapp.com/search?q="
-    
+    var i = 0
     override func viewDidLoad() {
         
         searchBar.delegate = self;
@@ -29,8 +29,23 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
+//        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search_history", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+//            let recentJSON = JSON(json.value!)
+//            self.recentSearches = []
+//            for (key, subJson):(String,JSON) in recentJSON{
+//                let search = subJson["search_history"]
+//                var searchString = ""
+//                for (key, subJson): (String, JSON) in search{
+//                    print(search)
+//                    searchString = searchString + " " + subJson.string!
+//                }
+//                self.recentSearches.append(searchString)
+//            }
+//        }
+//        self.recentSearchesTable.reloadData()
     }
     
+
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         
         if segue.identifier == "searchResults" {
@@ -56,7 +71,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.searchURL = url + searchBar.text!.lowercaseString
+        let searchString = searchBar.text?.lowercaseString
+        let processedString = String(searchString!.characters.map {
+            $0 == " " ? "+" : $0
+            })
+        print(processedString)
+        self.searchURL = url + processedString
         Alamofire.request(.GET, self.searchURL, encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.searchJSON = JSON(json.value!)
         }

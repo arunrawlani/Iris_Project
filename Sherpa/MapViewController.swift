@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     
     var articlework = [ArticleWork]() //loads the article from the Artwork.swift file to visualize on the map
     var mapJSON: JSON = []
-    let url = "https://nsapp.herokuapp.com/articles"
+    let url = "https://nsapp.herokuapp.com/articles?map=true"
     
     
     override func viewDidLoad() { //Implements the viewDidLoad for basic view setup
@@ -32,16 +32,16 @@ class MapViewController: UIViewController {
                 let imagName = "expandShadow.png"
                 let pinAnnotation = ArticleWork(title: title, summary: summary, url: url, view_count: view_count, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), imagName: imagName)
                 
-                self.articlework.append(pinAnnotation)
+                //self.articlework.append(pinAnnotation)
                 self.mapView.addAnnotation(pinAnnotation)
                 
             }
            print(self.articlework.count)
         }
         
-        for annotation in self.articlework{
-            self.mapView.addAnnotation(annotation)
-        }
+//        for annotation in self.articlework{
+//            self.mapView.addAnnotation(annotation)
+//        }
         
         super.viewDidLoad()
         mapView.delegate = self
@@ -89,7 +89,7 @@ class MapViewController: UIViewController {
         let annotationsToRemove = self.mapView.annotations
         self.mapView.removeAnnotations( annotationsToRemove )
         
-        Alamofire.request(.GET, "https://nsapp.herokuapp.com/articles", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/articles?map=true", encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.mapJSON = JSON(json.value!)
             for (key, subJson):(String,JSON) in self.mapJSON{
                 
@@ -102,7 +102,7 @@ class MapViewController: UIViewController {
                 let imagName = "expandShadow.png"
                 let pinAnnotation = ArticleWork(title: title, summary: summary, url: url, view_count: view_count, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), imagName: imagName)
                 
-                self.articlework.append(pinAnnotation)
+                //self.articlework.append(pinAnnotation)
                 self.mapView.addAnnotation(pinAnnotation)
                 
             }
@@ -117,7 +117,7 @@ class MapViewController: UIViewController {
         let annotationsToRemove = self.mapView.annotations
         self.mapView.removeAnnotations( annotationsToRemove )
         
-        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=brussels", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/articles/politics", encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.mapJSON = JSON(json.value!)
             for (key, subJson):(String,JSON) in self.mapJSON{
                 
@@ -130,7 +130,7 @@ class MapViewController: UIViewController {
                 let imagName = "politicsPin.png"
                 let pinAnnotation = ArticleWork(title: title, summary: summary, url: url, view_count: view_count, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), imagName: imagName)
                 
-                self.articlework.append(pinAnnotation)
+                //self.articlework.append(pinAnnotation)
                 self.mapView.addAnnotation(pinAnnotation)
                 
             }
@@ -145,7 +145,7 @@ class MapViewController: UIViewController {
         let annotationsToRemove = self.mapView.annotations
         self.mapView.removeAnnotations( annotationsToRemove )
         
-        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=facebook+buried", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/articles/entertainment", encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.mapJSON = JSON(json.value!)
             for (key, subJson):(String,JSON) in self.mapJSON{
                 
@@ -158,7 +158,7 @@ class MapViewController: UIViewController {
                 let imagName = "entertainmentPin.png"
                 let pinAnnotation = ArticleWork(title: title, summary: summary, url: url, view_count: view_count, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), imagName: imagName)
                 
-                self.articlework.append(pinAnnotation)
+                //self.articlework.append(pinAnnotation)
                 self.mapView.addAnnotation(pinAnnotation)
                 
             }
@@ -173,7 +173,7 @@ class MapViewController: UIViewController {
         let annotationsToRemove = self.mapView.annotations
         self.mapView.removeAnnotations( annotationsToRemove )
         
-        Alamofire.request(.GET, "https://nsapp.herokuapp.com/search?q=artificial+intelligence", encoding: .JSON).responseJSON { (req, res, json) -> Void in
+        Alamofire.request(.GET, "https://nsapp.herokuapp.com/articles/scitech", encoding: .JSON).responseJSON { (req, res, json) -> Void in
             self.mapJSON = JSON(json.value!)
             for (key, subJson):(String,JSON) in self.mapJSON{
                 
@@ -186,7 +186,7 @@ class MapViewController: UIViewController {
                 let imagName = "sciencePin.png"
                 let pinAnnotation = ArticleWork(title: title, summary: summary, url: url, view_count: view_count, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), imagName: imagName)
                 
-                self.articlework.append(pinAnnotation)
+                //self.articlework.append(pinAnnotation)
                 self.mapView.addAnnotation(pinAnnotation)
                 
             }
@@ -264,8 +264,8 @@ extension MapViewController: MKMapViewDelegate {
     func addBounceAnimationToView(view: UIView)
     {
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale") as CAKeyframeAnimation
-        bounceAnimation.values = [ 0.03, 1.6, 0.7, 1.2, 1]
-        bounceAnimation.duration = 2.5
+        bounceAnimation.values = [ 0.05, 1.3, 0.8, 1.1, 1]
+        bounceAnimation.duration = 2.0
         
         let timingFunctions = NSMutableArray(capacity: bounceAnimation.values!.count)
         
