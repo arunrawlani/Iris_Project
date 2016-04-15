@@ -13,7 +13,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
     var enteredText: Bool = false
     var reviewedTour : Tour?
 
-    let PLACEHOLDER_TEXT = "Example: The tour has been life defining. There was expectional hardwork put into it and I would torally recommend this to a friend. Awesome job!"
+    let PLACEHOLDER_TEXT = "Example: The writer has done an exemplary job in the article. He meticulously states the advantages of equality in the modern society. Kudos!"
     
     var finalRating: Int = 0
     
@@ -44,8 +44,8 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextVie
         
         
         // Labels init
-        let liveText = NSString(format: "%.2f", self.floatRatingView.rating) as String
-        print("Live:\(liveText)")
+        //let liveText = NSString(format: "%.2f", self.floatRatingView.rating) as String
+        //print("Live:\(liveText)")
         let updatedText = NSString(format: "%.2f", self.floatRatingView.rating) as String
         print("Updated load:\(updatedText)")
         
