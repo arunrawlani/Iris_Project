@@ -59,10 +59,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oXl-LU-VbJ">
-                                <rect key="frame" x="20" y="91" width="560" height="184"/>
+                                <rect key="frame" x="20" y="91" width="560" height="220"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="184" id="mE5-sI-GtJ"/>
+                                    <constraint firstAttribute="height" constant="220" id="mE5-sI-GtJ"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
