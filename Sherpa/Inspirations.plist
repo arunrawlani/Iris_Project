@@ -4,31 +4,45 @@
 <array>
 	<dict>
 		<key>Title</key>
-		<string>Trump Loses Weekend Delegate </string>
+		<string>Chatbots and VR in store for F8 conference</string>
 		<key>Speaker</key>
-		<string>Tammy Coron</string>
+		<string>Alexis Gallagher</string>
 		<key>Room</key>
-		<string>The Hill</string>
+		<string>Metropolitan Center</string>
 		<key>Time</key>
-		<string>1334 Views</string>
+		<string>Feb 6, 5:45</string>
 		<key>Background</key>
-		<string>Inspiration-01</string>
+		<string>Inspiration-10</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/04/03/politics/north-dakota-gop-delegates-donald-trump-ted-cruz-john-kasich/</string>
+		<string>http://www.ctvnews.ca/sci-tech/chatbots-and-vr-in-store-for-2016-facebook-f8-conference-1.2855536</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Venezuela Local Politician Killed</string>
+		<string>Boko Haram’s Use of Child Abuse</string>
 		<key>Speaker</key>
-		<string>Kim Pedersen</string>
+		<string>Jake Gundersen</string>
+		<key>Room</key>
+		<string>The Hill</string>
+		<key>Time</key>
+		<string>7476 Views</string>
+		<key>Background</key>
+		<string>Inspiration-05</string>
+		<key>Website</key>
+		<string>http://www.theglobeandmail.com/news/world/boko-harams-use-of-child-suicide-bombers-soaring-un-says/article29604710/</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Yellow fever outbreak kills 21 in Congo</string>
+		<key>Speaker</key>
+		<string>Ellen Shapiro</string>
 		<key>Room</key>
 		<string>The Grid</string>
 		<key>Time</key>
-		<string>1234 Views</string>
+		<string>848 Views</string>
 		<key>Background</key>
-		<string>Inspiration-02</string>
+		<string>Inspiration-06</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2015/11/26/americas/venezuela-opposition-politician-killed/</string>
+		<string>http://www.cbc.ca/news/health/who-congo-yellow-fever-1.3531487</string>
 	</dict>
 	<dict>
 		<key>Title</key>
@@ -46,31 +60,31 @@
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Boko Haram’s Use of Child Abuse</string>
+		<string>Venezuela Local Politician Killed</string>
 		<key>Speaker</key>
-		<string>Jake Gundersen</string>
-		<key>Room</key>
-		<string>The Hill</string>
-		<key>Time</key>
-		<string>7476 Views</string>
-		<key>Background</key>
-		<string>Inspiration-05</string>
-		<key>Website</key>
-		<string>http://www.theglobeandmail.com/news/world/boko-harams-use-of-child-suicide-bombers-soaring-un-says/article29604710/ </string>
-	</dict>
-	<dict>
-		<key>Title</key>
-		<string>Yellow fever outbreak kills 21 in Congo</string>
-		<key>Speaker</key>
-		<string>Ellen Shapiro</string>
+		<string>Kim Pedersen</string>
 		<key>Room</key>
 		<string>The Grid</string>
 		<key>Time</key>
-		<string>848 Views</string>
+		<string>1234 Views</string>
 		<key>Background</key>
-		<string>Inspiration-06</string>
+		<string>Inspiration-02</string>
 		<key>Website</key>
-		<string>http://www.cbc.ca/news/health/who-congo-yellow-fever-1.3531487 </string>
+		<string>http://www.cnn.com/2015/11/26/americas/venezuela-opposition-politician-killed/</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Trump Loses Weekend Delegate </string>
+		<key>Speaker</key>
+		<string>Tammy Coron</string>
+		<key>Room</key>
+		<string>The Hill</string>
+		<key>Time</key>
+		<string>1334 Views</string>
+		<key>Background</key>
+		<string>Inspiration-01</string>
+		<key>Website</key>
+		<string>http://www.cnn.com/2016/04/03/politics/north-dakota-gop-delegates-donald-trump-ted-cruz-john-kasich/</string>
 	</dict>
 	<dict>
 		<key>Title</key>
@@ -112,21 +126,7 @@
 		<key>Background</key>
 		<string>Inspiration-09</string>
 		<key>Website</key>
-		<string>http://www.theglobeandmail.com/news/world/two-further-suspects-charged-in-brussels-attacks/article29604304/ </string>
-	</dict>
-	<dict>
-		<key>Title</key>
-		<string>Chatbots and VR in store for F8 conference</string>
-		<key>Speaker</key>
-		<string>Alexis Gallagher</string>
-		<key>Room</key>
-		<string>Metropolitan Center</string>
-		<key>Time</key>
-		<string>Feb 6, 5:45</string>
-		<key>Background</key>
-		<string>Inspiration-10</string>
-		<key>Website</key>
-		<string>http://www.ctvnews.ca/sci-tech/chatbots-and-vr-in-store-for-2016-facebook-f8-conference-1.2855536 </string>
+		<string>http://www.theglobeandmail.com/news/world/two-further-suspects-charged-in-brussels-attacks/article29604304/</string>
 	</dict>
 	<dict>
 		<key>Title</key>
@@ -140,7 +140,7 @@
 		<key>Background</key>
 		<string>Inspiration-11</string>
 		<key>Website</key>
-		<string>http://www.androidauthority.com/fenix-creator-quote-rss-reader-feedly-inoreader-685744/ </string>
+		<string>http://www.androidauthority.com/fenix-creator-quote-rss-reader-feedly-inoreader-685744/</string>
 	</dict>
 	<dict>
 		<key>Title</key>
@@ -154,7 +154,7 @@
 		<key>Background</key>
 		<string>Inspiration-12</string>
 		<key>Website</key>
-		<string>http://www.wsj.com/articles/canadian-grocer-loblaw-plans-expansion-1460465858 </string>
+		<string>http://www.wsj.com/articles/canadian-grocer-loblaw-plans-expansion-1460465858</string>
 	</dict>
 	<dict>
 		<key>Title</key>
@@ -172,7 +172,7 @@
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Obama optimisitc about America</string>
+		<string>Fires turn Amazon into desert</string>
 		<key>Speaker</key>
 		<string>Matthijs Hollemans</string>
 		<key>Room</key>
@@ -182,11 +182,11 @@
 		<key>Background</key>
 		<string>Inspiration-14</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.independent.co.uk/news/world/americas/fires-could-turn-amazon-rainforest-into-a-desert-as-human-activity-and-climate-change-threaten-lungs-9259741.html</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Luke Ronchi drops the Cup</string>
+		<string>Secret to a Successful Business</string>
 		<key>Speaker</key>
 		<string>Cesare Rocchi</string>
 		<key>Room</key>
@@ -196,11 +196,11 @@
 		<key>Background</key>
 		<string>Inspiration-15</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.forbes.com/sites/quora/2012/12/20/whats-the-secret-to-a-successful-coffee-shop/#cf515246d376</string>
 	</dict>
 	<dict>
 		<key>Title</key>
-		<string>Mora wins the F1 race</string>
+		<string>Ukarine Peace Talks </string>
 		<key>Speaker</key>
 		<string>Saul Mora</string>
 		<key>Room</key>
@@ -210,7 +210,7 @@
 		<key>Background</key>
 		<string>Inspiration-16</string>
 		<key>Website</key>
-		<string>http://www.cnn.com/2016/03/15/politics/election-2016-ohio-illinois-florida-primaries-highlights/index.html</string>
+		<string>http://www.nzherald.co.nz/world/news/article.cfm?c_id=2&amp;objectid=11398649</string>
 	</dict>
 </array>
 </plist>
