@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate{
     var window: UIWindow?
     var client: SINClient?
     var splash: UIImageView?
-    var parseLoginHelper: ParseLoginHelper!
    // var logInViewController : PFLogInViewController! = PFLogInViewController()
    // var signUpViewController: PFSignUpViewController! = PFSignUpViewController()
     var requestSubmitted: Bool = false
@@ -26,22 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINClientDelegate{
     override init(){
         super.init()
         
-            parseLoginHelper = ParseLoginHelper {[unowned self] user, error in
-            //Initializethe ParseLoginHelper with a callback
-            if let error = error{
-                //Returns an error if not successful by using the method in ErrorHandling.swift
-                ErrorHandling.defaultErrorHandler(error)
-            }
-            else if let user = user {
-                
-                //if login was successful, returns a user. Display the TabController
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabBarController = storyboard.instantiateViewControllerWithIdentifier("NavigationControllerView") 
-                
-                //As soon as login is successful, replace login screen witht tab bar
-                self.window?.rootViewController!.presentViewController(tabBarController, animated:true, completion:nil)
-            }
-        } 
     }
 
     //MARK: Facebook Integration

@@ -63,7 +63,6 @@
 		F1BB0B8B1B7708B50031FB6A /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB0B8A1B7708B50031FB6A /* SignViewController.swift */; };
 		F1BB0B921B7A98E30031FB6A /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB0B911B7A98E30031FB6A /* PhotoTakingHelper.swift */; };
 		F1D2835D1B615D1D000E1BD4 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D2835C1B615D1D000E1BD4 /* OptionViewController.swift */; };
-		F1EEC4501B5F06B4008A04CF /* ParseLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEC44F1B5F06B4008A04CF /* ParseLoginHelper.swift */; };
 		F1EEC4591B5F339F008A04CF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEC4581B5F339F008A04CF /* ErrorHandling.swift */; };
 		F1EEC45D1B600718008A04CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EEC45C1B600718008A04CF /* CFNetwork.framework */; };
 		F1EEC45F1B600731008A04CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EEC45E1B600731008A04CF /* CoreGraphics.framework */; };
@@ -166,7 +165,6 @@
 		F1BB0B911B7A98E30031FB6A /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		F1D2835C1B615D1D000E1BD4 /* OptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		F1EEC44C1B5EF4FF008A04CF /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
-		F1EEC44F1B5F06B4008A04CF /* ParseLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLoginHelper.swift; sourceTree = "<group>"; };
 		F1EEC4581B5F339F008A04CF /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		F1EEC45C1B600718008A04CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F1EEC45E1B600731008A04CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -392,7 +390,6 @@
 				F1A628F41B76E87700ABFB8E /* MainViewController.swift */,
 				A49B61321B5B9E0D00F81B3D /* CallViewController.swift */,
 				F1F84D241C96720600BAA84E /* GeneralTrendsViewController.swift */,
-				F1EEC44F1B5F06B4008A04CF /* ParseLoginHelper.swift */,
 				659895B31B5B989F00607B5E /* LoginViewController.swift */,
 				F1BB0B8A1B7708B50031FB6A /* SignViewController.swift */,
 				E2A344551B5B8861004CAF3A /* TourOverviewViewController.swift */,
@@ -668,7 +665,6 @@
 				F109F9221B89CE5C00B14050 /* ActivityViewCell.swift in Sources */,
 				F10E8D831B693A790037E340 /* ReserveViewController.swift in Sources */,
 				F178CEFA1B7BCAF000B5642D /* DateUtils.swift in Sources */,
-				F1EEC4501B5F06B4008A04CF /* ParseLoginHelper.swift in Sources */,
 				F1B7AB2D1B72ABF90036DEFE /* TransitionManager.swift in Sources */,
 				E2A344441B5B0550004CAF3A /* ExploreTableCell.swift in Sources */,
 				E2A344421B5B053C004CAF3A /* TableViewForExplore.swift in Sources */,
