@@ -132,9 +132,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                 })
             print(processedString)
             self.searchURL = url + processedString
-            Alamofire.request(.GET, self.searchURL, encoding: .JSON).responseJSON { (req, res, json) -> Void in
-                self.searchJSON = JSON(json.value!)
-            }
+//            Alamofire.request(.GET, self.searchURL, encoding: .JSON).responseJSON { (req, res, json) -> Void in
+//                self.searchJSON = JSON(json.value!)
+//            }
             performSegueWithIdentifier("searchResults", sender: self)
         }
         else{
